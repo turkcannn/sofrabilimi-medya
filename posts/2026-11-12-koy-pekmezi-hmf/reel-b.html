@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0E1A2B;--tq:#2EC4B6;--tx:#E6F3F1;--rd:#FF6B5E;--am:#FFC857}
+*{box-sizing:border-box;margin:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:var(--bg);color:var(--tx);font-family:"IBM Plex Mono","DejaVu Sans",monospace}
+body:before{content:"";position:absolute;inset:0;background:linear-gradient(var(--tq) 1px,transparent 1px) 0 0/100% 60px,linear-gradient(90deg,var(--tq) 1px,transparent 1px) 0 0/60px 100%;opacity:.1}
+.scan{position:absolute;left:0;right:0;height:8px;background:var(--tq);opacity:.5;animation:sc 3s linear infinite}
+@keyframes sc{from{top:0}to{top:1920px}}
+.top{position:absolute;top:100px;left:70px;right:70px;display:flex;justify-content:space-between;font-weight:700;font-size:34px;color:var(--tq);border-bottom:3px solid var(--tq);padding-bottom:14px}
+.scene{inset:260px 70px 470px;display:flex;flex-direction:column;justify-content:center;gap:38px}
+.big{font-size:100px;line-height:1.1;font-weight:700}
+.body{font-size:50px;line-height:1.35;font-weight:500}
+.fade{opacity:0;animation:fade .6s ease-out both}
+@keyframes fade{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+.chip{display:inline-block;background:var(--tq);color:var(--bg);padding:8px 22px;font-weight:700;font-size:44px;animation:fade .5s both}
+.jar{align-self:center;position:relative;width:360px}
+.beam{position:absolute;left:-30px;right:-30px;height:10px;background:var(--tq);box-shadow:0 0 30px var(--tq);animation:beam 2s ease-in-out infinite alternate}
+@keyframes beam{from{top:30px}to{top:380px}}
+.gauge{height:90px;border:4px solid var(--tq);position:relative}
+.gauge i{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--rd);animation:g 2s ease-out both}
+@keyframes g{to{width:var(--w)}}
+.lim{position:absolute;top:-26px;bottom:-26px;left:50%;width:5px;background:var(--am)}
+.lbl{color:var(--am);font-size:42px;font-weight:700}
+.ctr{font-size:200px;font-weight:700;color:var(--rd);line-height:1}
+.ok{color:var(--tq);font-weight:700;border:5px solid var(--tq);padding:14px 26px;font-size:56px;display:inline-block;animation:fade .5s both}
+#sb-sub span{background:var(--tq)!important;color:var(--bg)!important}
+#sb-prog{background:var(--tq)!important}
+</style></head><body>
+<div class="scan"></div>
+<div class="top"><span>@sofrabilimi</span><span>DOĞRU BİLİNEN YANLIŞ</span></div>
+
+<section class="scene" data-slide="1">
+  <div class="chip" data-t="0">ANALİZ BAŞLADI</div>
+  <div class="big fade" data-t=".3">Köyden geldi = daha temiz?</div>
+  <svg class="jar fade" data-t=".8" width="360" height="420" viewBox="0 0 360 420"><rect x="80" y="10" width="200" height="40" fill="#2EC4B6"/><path d="M60 60h240v310a40 40 0 0 1-40 40H100a40 40 0 0 1-40-40z" fill="#5A2E14" stroke="#2EC4B6" stroke-width="8"/><rect x="100" y="170" width="160" height="110" fill="#0E1A2B" opacity=".6"/><text x="180" y="240" fill="#2EC4B6" font-size="38" text-anchor="middle" font-family="DejaVu Sans" font-weight="700">?</text></svg>
+</section>
+
+<section class="scene" data-slide="4">
+  <div class="lbl fade" data-t="0">YASAL SINIR: 75 mg/kg</div>
+  <div class="gauge fade" data-t=".2"><i style="--w:96%;animation-delay:.6s"></i><div class="lim"></div></div>
+  <div class="ctr fade" data-t=".6">136<span style="font-size:70px">mg/kg</span></div>
+  <div class="body fade" data-t="2">Pazardan alınan geleneksel pekmez</div>
+  <div class="chip" data-t="2.8" style="background:var(--rd)">SINIRIN ~2 KATI</div>
+</section>
+
+<section class="scene" data-slide="7">
+  <div class="ok" data-t="0">✓ KAYITLI</div>
+  <div class="ok" data-t=".6">✓ ETİKETLİ</div>
+  <div class="big fade" data-t="1.4">Pekmezi böyle seç.</div>
+  <div class="body fade" data-t="2.4" style="color:var(--am)">Cevabı profildeki postta.</div>
+</section>
+</body></html>
