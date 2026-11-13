@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#24391A;--lime:#C5D93A;--gold:#F5B700;--coral:#FF5E3A;--cream:#FFF6E3;--ink:#1E1A14}
+*{box-sizing:border-box;margin:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:var(--bg);font-family:Poppins,"DejaVu Sans",sans-serif;color:var(--cream)}
+.band{position:absolute;top:100px;left:70px;right:70px;display:flex;justify-content:space-between;font-size:30px;font-weight:800;color:var(--lime);letter-spacing:.06em}
+.band b{color:var(--gold)}
+.scene{inset:260px 70px 470px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:44px}
+.big{font-weight:800;font-size:104px;line-height:1.25;text-align:center;letter-spacing:-.02em}
+.mid{font-weight:800;font-size:64px;line-height:1.15;text-align:center}
+.hl{color:var(--ink);background:var(--lime);padding:0 20px;border-radius:18px}
+.g{color:var(--gold)} .c{color:var(--coral)}
+.pop{opacity:0;animation:pop .55s cubic-bezier(.2,1.6,.4,1) both}
+@keyframes pop{from{opacity:0;transform:scale(.5) translateY(60px)}to{opacity:1;transform:none}}
+.drop{opacity:0;animation:drop .6s cubic-bezier(.2,1.5,.4,1) both}
+@keyframes drop{from{opacity:0;transform:translateY(-160px) rotate(-8deg)}to{opacity:1;transform:none}}
+.bob{animation:bob 1.4s ease-in-out infinite alternate both}
+@keyframes bob{from{transform:translateY(-14px) rotate(-4deg)}to{transform:translateY(14px) rotate(4deg)}}
+.chip{font-size:46px;font-weight:800;padding:22px 38px;border-radius:999px;background:var(--cream);color:var(--ink)}
+.chips{display:flex;gap:24px;flex-wrap:wrap;justify-content:center}
+.ring{width:360px;height:360px;border-radius:50%;border:20px solid rgba(255,246,227,.2);display:grid;place-items:center;position:relative}
+.ring:before{content:"";position:absolute;inset:-20px;border-radius:50%;border:20px solid transparent;border-top-color:var(--lime);animation:sp 2.2s linear infinite both}
+@keyframes sp{to{transform:rotate(360deg)}}
+.ring .n{font-size:150px;font-weight:800;color:var(--gold);line-height:1}
+.ring .s{font-size:32px;font-weight:800;text-align:center}
+.shake{animation:shk .5s ease-in-out infinite alternate both}
+@keyframes shk{from{transform:rotate(-6deg)}to{transform:rotate(6deg)}}
+.btn{font-size:54px;font-weight:800;padding:28px 50px;border-radius:999px;background:var(--lime);color:var(--ink);opacity:0;animation:pop .5s cubic-bezier(.2,1.6,.4,1) both}
+#sb-sub span{background:rgba(20,34,14,.85)!important}
+#sb-prog{background:var(--lime)!important}
+</style></head><body>
+<div class="band"><span>@sofrabilimi</span><b>DOĞRU BİLİNEN YANLIŞ</b></div>
+
+<section class="scene" data-slide="1" data-in="D" data-cam="push">
+  <div class="drop" data-t="0"><div class="bob"><svg width="220" height="240" viewBox="0 0 220 240"><g fill="#F5B700"><rect x="50" y="20" width="26" height="110" rx="8"/><rect x="86" y="8" width="26" height="122" rx="8"/><rect x="122" y="24" width="26" height="106" rx="8"/><rect x="156" y="36" width="24" height="94" rx="8"/></g><path d="M30 120h160l-18 100H48z" fill="#FF5E3A"/><rect x="30" y="112" width="160" height="16" rx="8" fill="#FFF6E3"/></svg></div></div>
+  <div class="big"><span class="pop" data-t=".3">Airfryer</span><br><span class="pop hl" data-t=".7">kurtarmıyor</span><span class="pop" data-t="1.0"> mu?</span></div>
+  <div class="chips"><span class="chip drop" data-t="1.6">24 örnek</span><span class="chip drop" data-t="1.9">3 yöntem</span></div>
+</section>
+
+<section class="scene" data-slide="5" data-in="L" data-cam="pan">
+  <div class="mid pop" data-t="0">Doğradıktan sonra</div>
+  <div class="ring pop" data-t=".3"><div style="text-align:center"><div class="n"><span class="count" data-to="10" data-t=".4" data-dur="1.6">0</span></div><div class="s">DAKİKA</div></div></div>
+  <div class="big pop" data-t="1.4"><span class="g">suda</span> beklet</div>
+</section>
+
+<section class="scene" data-slide="7" data-in="Z" data-cam="pull">
+  <div class="mid pop" data-t="0">Tek çalışma,<br>net ipucu</div>
+  <div class="pop" data-t=".5"><div class="shake"><svg width="170" height="200" viewBox="0 0 170 200"><path d="M85 190V30M30 120l55 70 55-70" fill="none" stroke="#C5D93A" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+  <div class="btn" data-t="1.1">Cevap profildeki postta</div>
+</section>
+</body></html>
