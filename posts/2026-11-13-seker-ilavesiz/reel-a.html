@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFF6E3;--ink:#111;--coral:#FF5E3A;--lime:#C5D93A;--gold:#F5B700;--green:#24391A}
+*{box-sizing:border-box;margin:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:var(--bg);font-family:Poppins,"DejaVu Sans",sans-serif;color:var(--ink)}
+body:before{content:"";position:absolute;inset:0;background:radial-gradient(rgba(0,0,0,.08) 3px,transparent 4px) 0 0/44px 44px}
+.handle{position:absolute;top:100px;width:100%;text-align:center;font-weight:800;font-size:42px}
+.series{position:absolute;top:165px;left:50%;transform:translateX(-50%) rotate(-2deg);background:var(--coral);color:#fff;font-weight:800;font-size:32px;letter-spacing:.1em;padding:10px 30px;border:6px solid var(--ink);border-radius:18px;box-shadow:8px 8px 0 var(--ink)}
+.scene{inset:300px 70px 470px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:44px}
+.card{border:8px solid var(--ink);border-radius:36px;box-shadow:12px 12px 0 var(--ink);padding:34px 44px;font-weight:800;text-align:center;opacity:0;animation:spring .7s cubic-bezier(.2,1.7,.4,1) both}
+@keyframes spring{from{opacity:0;transform:scale(.3) rotate(-14deg)}to{opacity:1;transform:rotate(var(--r,0deg))}}
+.big{font-size:100px;line-height:1.05}.mid{font-size:64px;line-height:1.12}
+.c1{background:var(--coral);color:#fff}.c2{background:var(--lime)}.c3{background:var(--gold)}.c4{background:#fff}
+.box{width:330px;height:420px;background:var(--gold);border:8px solid var(--ink);border-radius:22px;box-shadow:12px 12px 0 var(--ink);position:relative;display:flex;flex-direction:column;align-items:center;opacity:0;animation:spring .7s cubic-bezier(.2,1.7,.4,1) both}
+.box .t{width:100%;background:var(--green);color:var(--lime);font-weight:800;font-size:44px;text-align:center;padding:16px 0;border-bottom:8px solid var(--ink);border-radius:12px 12px 0 0}
+.stamp{position:absolute;right:-50px;top:150px;width:200px;height:200px;border-radius:50%;background:var(--coral);color:#fff;border:6px dashed #fff;outline:8px solid var(--ink);display:grid;place-items:center;font-weight:800;font-size:38px;line-height:1.1;text-align:center;transform:rotate(-14deg);opacity:0;animation:spring .5s cubic-bezier(.2,1.7,.4,1) both}
+.note{position:absolute;right:-30px;top:170px;width:190px;padding:20px;background:#FFF1B8;border:6px dashed #8a7a40;font-weight:800;font-size:40px;text-align:center;transform:rotate(8deg);opacity:0;animation:spring .5s ease-out both}
+.wob{animation:wob 1s ease-in-out infinite alternate both}
+@keyframes wob{from{transform:rotate(-6deg)}to{transform:rotate(6deg)}}
+.pulse{animation:pulse .9s ease-in-out infinite alternate both}
+@keyframes pulse{from{transform:scale(1)}to{transform:scale(1.08)}}
+.row{display:flex;gap:20px}
+.ing{display:flex;flex-direction:column;align-items:center;gap:12px;width:250px;padding:26px 6px;background:#fff;border:8px solid var(--ink);border-radius:30px;box-shadow:10px 10px 0 var(--ink);font-weight:800;font-size:34px;opacity:0;animation:spring .6s cubic-bezier(.2,1.7,.4,1) both}
+.ing svg{width:120px;height:120px}
+.arrow{font-size:140px;font-weight:800;color:var(--coral);-webkit-text-stroke:6px var(--ink);animation:wob .6s ease-in-out infinite alternate both}
+.x{width:150px;height:150px;border-radius:50%;background:var(--coral);border:8px solid var(--ink);color:#fff;font-size:100px;font-weight:800;display:grid;place-items:center;opacity:0;animation:spring .5s cubic-bezier(.2,1.7,.4,1) both}
+.ok{background:var(--lime);color:var(--ink)}
+.flip{width:300px;height:380px;background:#fff;border:8px solid var(--ink);border-radius:26px;box-shadow:12px 12px 0 var(--ink);display:grid;place-items:center;font-weight:800;font-size:46px;text-align:center;padding:20px;animation:flip 1.4s ease-in-out both}
+@keyframes flip{0%{transform:rotateY(0)}60%,100%{transform:rotateY(360deg)}}
+.cal{width:300px;border:8px solid var(--ink);border-radius:28px;box-shadow:12px 12px 0 var(--ink);background:#fff;overflow:hidden;text-align:center;font-weight:800;opacity:0;animation:spring .6s cubic-bezier(.2,1.7,.4,1) both}
+.cal .m{background:var(--coral);color:#fff;font-size:44px;padding:12px}.cal .d{font-size:140px;line-height:1.1}.cal .y{font-size:50px;padding-bottom:12px}
+.chk{display:grid;gap:22px;width:100%}
+.chk div{display:flex;align-items:center;gap:24px;background:#fff;border:8px solid var(--ink);border-radius:28px;box-shadow:8px 8px 0 var(--ink);padding:20px 30px;font-weight:800;font-size:54px;opacity:0;animation:spring .6s cubic-bezier(.2,1.7,.4,1) both}
+.chk b{width:78px;height:78px;border-radius:50%;background:var(--lime);border:6px solid var(--ink);display:grid;place-items:center;font-size:48px;flex:none}
+.heart{font-size:0}
+</style></head><body>
+<div class="handle">@sofrabilimi</div>
+<div class="series">ETİKET ŞAŞIRTMACASI</div>
+
+<section class="scene" data-slide="1">
+  <div class="box" data-t="0" style="--r:-4deg"><div class="t">MEYVELİ<br>BAR</div><div class="stamp" data-t=".5">ŞEKER<br>İLAVESİZ</div></div>
+  <div class="card c4 mid" data-t=".7" style="--r:2deg">Arkasında ne var?</div>
+  <div class="card c1 big wob" data-t="1.4">?</div>
+</section>
+
+<section class="scene" data-slide="2">
+  <div class="card c3 mid" data-t="0" style="--r:-3deg">Ön yüz: "şeker ilavesiz"</div>
+  <div class="arrow" data-t=".5">↓</div>
+  <div class="card c4 mid" data-t=".9" style="--r:2deg">İçindekiler:</div>
+  <div class="row"><div class="card c1" data-t="1.6" style="font-size:56px;--r:-4deg">pekmez</div><div class="card c3" data-t="2.0" style="font-size:56px;--r:3deg">bal</div></div>
+</section>
+
+<section class="scene" data-slide="3">
+  <div class="card c4 mid" data-t="0" style="--r:-2deg">Şeker yerine katıldıysa:</div>
+  <div class="row">
+    <div class="ing" data-t=".4"><svg viewBox="0 0 100 100"><rect x="30" y="20" width="40" height="70" rx="10" fill="#5a3418"/><rect x="38" y="8" width="24" height="14" fill="#111"/></svg>pekmez</div>
+    <div class="ing" data-t=".7"><svg viewBox="0 0 100 100"><rect x="18" y="28" width="64" height="60" rx="14" fill="#F5B700" stroke="#111" stroke-width="5"/><rect x="12" y="18" width="76" height="16" rx="6" fill="#24391A"/></svg>bal</div>
+    <div class="ing" data-t="1.0"><svg viewBox="0 0 100 100"><circle cx="50" cy="55" r="34" fill="#FF5E3A" stroke="#111" stroke-width="5"/><path d="M50 22 q10-14 22-10" stroke="#24391A" stroke-width="7" fill="none"/></svg>konsantre</div>
+  </div>
+  <div class="card c1 mid pulse" data-t="1.9" style="--r:-2deg">“şeker ilavesiz” YASAK</div>
+</section>
+
+<section class="scene" data-slide="4">
+  <div class="row" style="gap:50px">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:26px"><div class="box" data-t="0" style="width:290px;height:360px;--r:-3deg"><div class="t" style="font-size:38px">BAR</div><div class="stamp" data-t=".5" style="width:160px;height:160px;font-size:30px;top:130px">ŞEKER<br>İLAVESİZ</div></div><div class="x" data-t="1.2">✕</div></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:26px"><div class="box" data-t=".3" style="width:290px;height:360px;--r:3deg"><div class="t" style="font-size:38px">BAR</div><div class="note" data-t=".8" style="width:170px;font-size:34px;top:140px">iddia yok</div></div><div class="x ok" data-t="1.6">✓</div></div>
+  </div>
+  <div class="card c3 mid" data-t="2.2" style="--r:-2deg">Fark: içindekiler</div>
+</section>
+
+<section class="scene" data-slide="5">
+  <div class="card c4 big" data-t="0" style="--r:-2deg">Sorun <span style="background:var(--lime);padding:0 12px">pekmez</span> değil</div>
+  <div class="card c1 big" data-t=".8" style="--r:2deg">yanlış iddia</div>
+  <div class="cal" data-t="1.8"><div class="m">ŞUBAT</div><div class="d">1</div><div class="y">2026</div></div>
+</section>
+
+<section class="scene" data-slide="6">
+  <div class="flip" data-t="0">Önde<br>"şeker<br>ilavesiz"</div>
+  <div class="card c2 big pulse" data-t="1.0">Çevir, oku!</div>
+</section>
+
+<section class="scene" data-slide="7">
+  <div class="card c3 big" data-t="0" style="--r:-2deg">Sen ne buldun?</div>
+  <div class="chk">
+    <div data-t=".8"><b>1</b>Yorumlara yaz</div>
+    <div data-t="1.3"><b>2</b>Videoyu kaydet</div>
+  </div>
+</section>
+</body></html>
