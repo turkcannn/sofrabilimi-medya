@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@500;700;800&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F4EFE3;--ink:#1B1B1B;--red:#C8341E;--blue:#2A6FA8;--gold:#E8B12A;--green:#1E7A3A}
+*{box-sizing:border-box;margin:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:var(--paper);color:var(--ink);font-family:Poppins,"DejaVu Sans",sans-serif}
+body:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.025) 0 2px,transparent 2px 6px)}
+.mast{position:absolute;top:90px;left:70px;right:70px;border-top:6px solid var(--ink);border-bottom:2px solid var(--ink);padding:14px 0;display:flex;justify-content:space-between;font-weight:700;font-size:30px;letter-spacing:.1em}
+.mast b{font-family:"DM Serif Display","DejaVu Serif",serif;font-size:42px;letter-spacing:0;font-weight:400}
+.scene{inset:260px 70px 470px;display:flex;flex-direction:column;justify-content:center;gap:34px}
+.head{font-family:"DM Serif Display","DejaVu Serif",Georgia,serif;font-size:112px;line-height:1.04}
+.head2{font-family:"DM Serif Display","DejaVu Serif",Georgia,serif;font-size:84px;line-height:1.05}
+.body{font-size:50px;line-height:1.3;font-weight:500}
+.rule{height:4px;background:var(--ink);transform-origin:left;animation:rule .6s ease-out both}
+@keyframes rule{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.note{font-family:Caveat,"DejaVu Sans",cursive;font-size:80px;color:var(--red)}
+.mark{background:linear-gradient(var(--gold),var(--gold)) no-repeat 0 85%/0% 38%;animation:mark .8s ease-out both}
+@keyframes mark{to{background-size:100% 38%}}
+.stamp{align-self:center;font-weight:800;font-size:130px;letter-spacing:.05em;color:var(--red);border:16px solid var(--red);border-radius:24px;padding:0 44px;transform:rotate(-8deg);opacity:0;animation:stamp .45s cubic-bezier(.3,1.8,.5,1) both}
+@keyframes stamp{from{opacity:0;transform:rotate(-8deg) scale(2.6)}to{opacity:.92;transform:rotate(-8deg) scale(1)}}
+.snow{animation:spin 6s linear infinite both;transform-origin:50% 50%}
+@keyframes spin{to{transform:rotate(360deg)}}
+.fall{animation:fl 2.2s ease-in infinite both}
+@keyframes fl{0%{transform:translateY(-20px);opacity:0}30%{opacity:1}100%{transform:translateY(60px);opacity:0}}
+.drain{height:0;animation:dr 2.2s ease-in-out both}
+.tank{width:210px;height:380px;border:8px solid var(--ink);border-radius:18px;display:flex;align-items:flex-end;background:#fff;overflow:hidden}
+.tank i{display:block;width:100%;background:var(--blue);height:100%;animation:dn 2.4s ease-in-out both;transform-origin:bottom}
+@keyframes dn{from{height:100%}to{height:48%}}
+.tank.fz i{animation:dn2 2.4s ease-in-out both}
+@keyframes dn2{from{height:100%}to{height:88%}}
+.pair{display:flex;gap:60px;justify-content:center;align-items:flex-end}
+.pair div.c{display:flex;flex-direction:column;align-items:center;gap:14px;font-size:42px;font-weight:700}
+.trio{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px}
+.cell{border-top:5px solid var(--ink);padding-top:12px;text-align:center}
+.cell .n{font-family:"DM Serif Display","DejaVu Serif",serif;font-size:190px;line-height:1}
+.cell .l{font-size:40px;font-weight:700;line-height:1.2}
+.f{opacity:0;animation:fd .6s ease-out both}
+@keyframes fd{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+.bars{display:flex;gap:50px;align-items:flex-end;justify-content:center;height:360px}
+.bb{width:200px;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:10px;height:100%}
+.bb .col{width:100%;height:0;animation:grow 1.4s cubic-bezier(.3,.9,.3,1) both}
+@keyframes grow{to{height:var(--h)}}
+.bb span{font-size:42px;font-weight:700}
+#sb-sub span{background:var(--ink)!important;color:var(--paper)}
+#sb-prog{background:var(--red)!important}
+</style></head><body>
+<div class="mast"><span>@sofrabilimi</span><b>Doğru Bilinen Yanlış</b></div>
+
+<section class="scene" data-slide="1" data-in="U" data-cam="push">
+  <div class="body f" data-t="0">Herkesin bildiği:</div>
+  <div class="head f" data-t=".3">“Donan sebzenin vitamini <span class="mark" data-t="1.2">ölür</span>”</div>
+  <div class="rule" data-t=".2"></div>
+  <div class="note f" data-t="2">Peki doğru mu?</div>
+</section>
+
+<section class="scene" data-slide="2" data-in="L" data-cam="pan">
+  <svg class="f" data-t="0" width="300" height="300" viewBox="-150 -150 300 300" style="align-self:center">
+    <g class="snow" stroke="#2A6FA8" stroke-width="12" stroke-linecap="round"><path d="M0 -130V130M-112 -65L112 65M-112 65L112 -65"/><path d="M-20 -110L0 -90L20 -110M-20 110L0 90L20 110" fill="none"/></g>
+  </svg>
+  <div class="head2 f" data-t=".4">Çözülünce yumuşuyor, su salıyor</div>
+  <div class="note f" data-t="1.6">“tadı gitti, vitamini de gitti”</div>
+</section>
+
+<section class="scene" data-slide="3" data-in="R" data-cam="pull">
+  <div class="head2 f" data-t="0">Taze sebze de bekledikçe besin kaybeder</div>
+  <div class="pair">
+    <div class="c"><div class="tank"><i></i></div><span>Buzdolabında bekleyen</span></div>
+    <div class="c"><div class="tank fz"><i></i></div><span>Dondurulmuş</span></div>
+  </div>
+  <div class="body f" data-t="2.6" style="font-size:40px;text-align:center">çizim temsilidir</div>
+</section>
+
+<section class="scene" data-slide="4" data-in="D" data-cam="push">
+  <div class="head2 f" data-t="0">8 sebze-meyve karşılaştırıldı</div>
+  <div class="trio">
+    <div class="cell f" data-t=".6"><div class="n"><span class="count" data-to="8" data-t=".6" data-dur="1">0</span></div><div class="l">karşılaştırma</div></div>
+    <div class="cell f" data-t="3.2"><div class="n" style="color:var(--green)"><span class="count" data-to="5" data-t="3.2" data-dur="1">0</span></div><div class="l">C vitamini farkı yok</div></div>
+    <div class="cell f" data-t="5" ><div class="n" style="color:var(--blue)"><span class="count" data-to="3" data-t="5" data-dur="1">0</span></div><div class="l">donmuşta yüksek</div></div>
+  </div>
+</section>
+
+<section class="scene" data-slide="5" data-in="Z" data-cam="pan">
+  <div class="stamp" data-t=".1" style="font-size:72px;margin-bottom:50px;white-space:nowrap">DÜRÜST OLALIM</div>
+  <div class="head2 f" data-t=".8" style="font-size:72px">Beta-karoten, donmuşta daha düşük:</div>
+  <div class="bars">
+    <div class="bb"><div class="col" data-t="1.4" style="--h:300px;background:#E8832A"></div><span>Bezelye taze</span></div>
+    <div class="bb"><div class="col" data-t="1.8" style="--h:190px;background:#8CB8D8"></div><span>donmuş</span></div>
+    <div class="bb"><div class="col" data-t="2.2" style="--h:300px;background:#E8832A"></div><span>Havuç taze</span></div>
+    <div class="bb"><div class="col" data-t="2.6" style="--h:200px;background:#8CB8D8"></div><span>donmuş</span></div>
+  </div>
+</section>
+
+<section class="scene" data-slide="6" data-in="L" data-cam="pull">
+  <div class="head2 f" data-t="0">Ne yapmalı?</div>
+  <div class="rule" data-t=".2"></div>
+  <div class="body f" data-t=".6">① Taze mi? Bekletmeden tüket.</div>
+  <div class="body f" data-t="2">② Donmuş mu? Etiketli ürünü seç, içindekilere bak.</div>
+  <div class="stamp" data-t="3.4" style="color:var(--green);border-color:var(--green);font-size:100px">AKILLICA</div>
+</section>
+
+<section class="scene" data-slide="7" data-in="Z" data-cam="push">
+  <div class="head f" data-t="0">Sen de böyle mi biliyordun?</div>
+  <div class="note f" data-t=".9">Yorumda tartışalım ↓</div>
+  <svg class="f" data-t="1.4" width="200" height="200" viewBox="-100 -100 200 200" style="align-self:center"><g class="snow" stroke="#2A6FA8" stroke-width="10" stroke-linecap="round"><path d="M0 -85V85M-74 -42L74 42M-74 42L74 -42"/></g></svg>
+</section>
+</body></html>

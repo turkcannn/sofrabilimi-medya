@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFF6E3;--k:#111;--co:#FF5E3A;--li:#C5D93A;--go:#F5B700;--bl:#8CC8F0}
+*{box-sizing:border-box;margin:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:var(--bg);font-family:Poppins,"DejaVu Sans",sans-serif;color:var(--k)}
+body:before{content:"";position:absolute;inset:0;background:radial-gradient(rgba(0,0,0,.08) 2px,transparent 2.5px) 0 0/34px 34px}
+.band{position:absolute;top:96px;left:60px;right:60px;display:flex;gap:18px;font-weight:800;font-size:32px}
+.band span{border:6px solid var(--k);background:var(--li);padding:10px 26px;border-radius:18px;box-shadow:8px 8px 0 var(--k);transform:rotate(-2deg)}
+.band span+span{background:var(--go);transform:rotate(2deg)}
+.scene{inset:270px 60px 470px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:44px}
+.card{border:8px solid var(--k);border-radius:30px;box-shadow:12px 12px 0 var(--k);padding:36px 44px;font-weight:800;line-height:1.08}
+.big{font-size:100px}
+.mid{font-size:62px;font-weight:700}
+.sp{opacity:0;animation:sp .6s cubic-bezier(.2,1.8,.4,1) both}
+@keyframes sp{from{opacity:0;transform:scale(.4) rotate(var(--r0,-12deg))}to{opacity:1;transform:rotate(var(--r,0deg))}}
+.wob{animation:wob 1.6s ease-in-out infinite alternate both}
+@keyframes wob{from{transform:rotate(-5deg)}to{transform:rotate(5deg)}}
+.row{display:flex;gap:40px;align-items:flex-end;justify-content:center;width:100%}
+.bar{width:300px;border:8px solid var(--k);border-radius:24px 24px 0 0;box-shadow:10px 10px 0 var(--k);height:0;animation:g 1.3s cubic-bezier(.3,1.4,.4,1) both;display:flex;justify-content:center;align-items:flex-start;padding-top:14px;font-size:44px;font-weight:800}
+@keyframes g{to{height:var(--h)}}
+.lbl{font-size:44px;font-weight:800;text-align:center}
+.arrow{font-size:150px;font-weight:800;line-height:1}
+#sb-sub span{background:var(--k)!important;border-radius:20px}
+#sb-prog{background:var(--co)!important}
+</style></head><body>
+<div class="band"><span>@sofrabilimi</span><span>DOĞRU BİLİNEN YANLIŞ</span></div>
+
+<section class="scene" data-slide="1" data-in="Z" data-cam="push">
+  <svg class="sp wob" data-t="0" width="260" height="260" viewBox="-130 -130 260 260" style="--r:0deg"><circle r="118" fill="#8CC8F0" stroke="#111" stroke-width="8"/><g stroke="#111" stroke-width="12" stroke-linecap="round"><path d="M0 -80V80M-70 -40L70 40M-70 40L70 -40"/></g></svg>
+  <div class="card big sp" data-t=".35" style="background:var(--go);--r:-3deg">Buzluktaki sebzenin vitamini gitmiş mi?</div>
+  <div class="card mid sp" data-t="1.5" style="background:var(--co);--r:3deg;color:#fff">Herkes öyle biliyor</div>
+</section>
+
+<section class="scene" data-slide="4" data-in="R" data-cam="pan">
+  <div class="card mid sp" data-t="0" style="background:var(--li);--r:-2deg">Buzdolabında bekleyen taze  vs  donmuş</div>
+  <div class="row">
+    <div style="display:flex;flex-direction:column;gap:16px;align-items:center"><div class="bar" data-t=".5" style="--h:330px;background:var(--go)">C vit.</div><div class="lbl">taze</div></div>
+    <div class="arrow sp" data-t="1.8" style="--r:0deg;margin-bottom:150px">≈</div>
+    <div style="display:flex;flex-direction:column;gap:16px;align-items:center"><div class="bar" data-t="1" style="--h:320px;background:var(--bl)">C vit.</div><div class="lbl">donmuş</div></div>
+  </div>
+  <div class="card mid sp" data-t="2.8" style="background:var(--co);color:#fff;--r:2deg">Çoğu zaman geri kalmıyor</div>
+</section>
+
+<section class="scene" data-slide="7" data-in="L" data-cam="pull">
+  <div class="card mid sp" data-t="0" style="background:var(--go);--r:2deg">Yalnızca bezelye ve havuçta:</div>
+  <div class="card big sp" data-t=".5" style="background:var(--bl);--r:-3deg">beta-karoten düşük</div>
+  <div class="card mid sp" data-t="2" style="background:var(--li);--r:2deg">Cevap profildeki postta</div>
+</section>
+</body></html>

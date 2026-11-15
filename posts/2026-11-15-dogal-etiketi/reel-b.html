@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#24391A;--cream:#FFF3D6;--lime:#C5D93A;--gold:#F5B700;--or:#FF7A2F}
+*{box-sizing:border-box;margin:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:var(--bg);color:var(--cream);font-family:Poppins,"DejaVu Sans",sans-serif}
+body:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 35%,rgba(197,217,58,.18),transparent 60%)}
+.band{position:absolute;top:96px;left:70px;right:70px;display:flex;justify-content:space-between;align-items:center;font-weight:800;font-size:30px;letter-spacing:.1em}
+.band b{background:var(--lime);color:var(--bg);padding:10px 24px;border-radius:12px}
+.scene{inset:270px 70px 470px;display:flex;flex-direction:column;justify-content:center;gap:26px}
+.w{display:inline-block;font-weight:900;font-size:128px;line-height:1.02;opacity:0;animation:wp .55s cubic-bezier(.2,1.8,.4,1) both;margin-right:22px}
+@keyframes wp{from{opacity:0;transform:translateY(80px) scale(.6) rotate(-5deg)}to{opacity:1;transform:none}}
+.lime{color:var(--lime)} .gold{color:var(--gold)} .or{color:var(--or)}
+.mid{font-weight:800;font-size:64px;line-height:1.15}
+.pillrow{display:flex;gap:20px;flex-wrap:wrap}
+.pill{font-weight:800;font-size:46px;padding:16px 30px;border-radius:999px;border:5px solid var(--lime);color:var(--lime);opacity:0;animation:drop .7s cubic-bezier(.3,1.5,.5,1) both}
+.pill.no{border-color:var(--or);color:var(--or);text-decoration:line-through;text-decoration-thickness:6px}
+@keyframes drop{from{opacity:0;transform:translateY(-240px) rotate(-10deg)}to{opacity:1;transform:none}}
+.meter{height:34px;border-radius:20px;background:rgba(255,255,255,.15);overflow:hidden}
+.meter i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--lime),var(--gold));animation:mf 1.6s ease-out both}
+@keyframes mf{to{width:var(--w)}}
+.stamp{align-self:flex-start;font-weight:900;font-size:110px;color:var(--or);border:14px solid var(--or);border-radius:22px;padding:0 36px;transform:rotate(-7deg);opacity:0;animation:st .45s cubic-bezier(.3,1.8,.5,1) both}
+@keyframes st{from{opacity:0;transform:rotate(-7deg) scale(2.8)}to{opacity:1;transform:rotate(-7deg)}}
+.f{opacity:0;animation:fd .6s ease-out both}
+@keyframes fd{from{opacity:0;transform:translateY(34px)}to{opacity:1;transform:none}}
+.bob{animation:bo 1.8s ease-in-out infinite alternate both}
+@keyframes bo{from{transform:translateY(-10px)}to{transform:translateY(10px)}}
+.pack{width:340px;height:420px;border-radius:26px;background:var(--cream);color:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;box-shadow:0 20px 0 rgba(0,0,0,.25);align-self:center;font-weight:900}
+#sb-sub span{background:rgba(10,20,5,.8)!important}
+#sb-prog{background:var(--gold)!important}
+</style></head><body>
+<div class="band"><span>@sofrabilimi</span><b>ETİKET ŞAŞIRTMACASI</b></div>
+
+<section class="scene" data-slide="1" data-in="Z" data-cam="push">
+  <div><span class="w" data-t="0">Paketteki</span><span class="w lime" data-t=".35">“doğal”</span><span class="w" data-t=".7">yazısı</span><span class="w gold" data-t="1.05">neye göre</span><span class="w" data-t="1.4">konuyor?</span></div>
+  <div class="pack bob f" data-t="1.8" style="font-size:70px"><span class="lime" style="color:#3E7D1E">DOĞAL</span><span style="font-size:36px;font-weight:700">örnek etiket</span></div>
+</section>
+
+<section class="scene" data-slide="4" data-in="R" data-cam="pan">
+  <div class="stamp" data-t=".1">HİÇ OLMAZ</div>
+  <div class="pillrow"><span class="pill no" data-t=".7">hakiki doğal</span><span class="pill no" data-t="1.1">%100 doğal</span></div>
+  <div class="mid f" data-t="2.2">Doğal ancak <span class="lime">tek malzemeli</span>, hiçbir şey eklenmemiş gıdaya</div>
+  <div class="meter f" data-t="2.8"><i data-t="2.8" style="--w:100%;animation-delay:2.8s"></i></div>
+</section>
+
+<section class="scene" data-slide="7" data-in="L" data-cam="pull">
+  <div><span class="w" style="font-size:96px;opacity:1;text-decoration:line-through;text-decoration-color:var(--or)" data-t="0">iri yazı</span></div>
+  <div><span class="w lime" data-t=".6">içindekiler</span><span class="w" data-t="1">listesi</span></div>
+  <div class="mid gold f" data-t="2.2">Cevabı profildeki postta.</div>
+</section>
+</body></html>

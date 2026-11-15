@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1F2A44;--hi:#FFE94A;--red:#E0412B;--grn:#2E9A55;--blu:#2F6FD0}
+*{box-sizing:border-box;margin:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#fff;color:var(--ink);font-family:Poppins,"DejaVu Sans",sans-serif}
+body:before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(80,140,220,.22) 2px,transparent 2px) 0 0/54px 54px,linear-gradient(90deg,rgba(80,140,220,.22) 2px,transparent 2px) 0 0/54px 54px}
+body:after{content:"";position:absolute;top:0;bottom:0;left:48px;width:4px;background:rgba(224,65,43,.45)}
+.band{position:absolute;top:96px;left:90px;right:70px;display:flex;justify-content:space-between;font-family:Caveat,"DejaVu Sans",cursive;font-size:56px;border-bottom:4px solid var(--ink);padding-bottom:6px}
+.band b{color:var(--red)}
+.scene{inset:260px 70px 470px 90px;display:flex;flex-direction:column;justify-content:center;gap:34px}
+.hand{font-family:Caveat,"DejaVu Sans",cursive;font-weight:700}
+.t1{font-size:130px;line-height:1}
+.t2{font-size:96px;line-height:1.02}
+.t3{font-size:64px;line-height:1.1}
+.body{font-size:48px;font-weight:600;line-height:1.3}
+.hl{background:linear-gradient(var(--hi),var(--hi)) no-repeat 0 88%/0% 45%;animation:hl .7s ease-out both}
+@keyframes hl{to{background-size:100% 45%}}
+.dr path,.dr circle,.dr rect,.dr line,.dr polyline{fill:none;stroke:var(--ink);stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.1s ease-out both}
+@keyframes draw{to{stroke-dashoffset:0}}
+.red path,.red circle,.red line{stroke:var(--red)!important}
+.grn path,.grn polyline{stroke:var(--grn)!important}
+.f{opacity:0;animation:fd .6s ease-out both}
+@keyframes fd{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+.pul{animation:pu 1.4s ease-in-out infinite both}
+@keyframes pu{50%{transform:scale(1.06)}}
+.tag{display:inline-block;border:5px solid var(--ink);border-radius:20px;padding:10px 26px;font-size:48px;font-weight:700;background:#fff;margin:8px 10px 8px 0}
+.tag.x{border-color:var(--red);color:var(--red);position:relative}
+.tag.x:after{content:"";position:absolute;left:-6px;right:-6px;top:50%;height:6px;background:var(--red);transform-origin:left;animation:strike .5s ease-out both;animation-delay:var(--sd,2s)}
+@keyframes strike{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.chip{display:flex;gap:18px;flex-wrap:wrap}
+.chip .tag{opacity:0;animation:pp .5s cubic-bezier(.2,1.7,.4,1) both}
+@keyframes pp{from{opacity:0;transform:scale(.4) rotate(-8deg)}to{opacity:1;transform:none}}
+#sb-sub span{background:rgba(31,42,68,.92)!important}
+#sb-prog{background:var(--red)!important}
+</style></head><body>
+<div class="band"><span>@sofrabilimi</span><b>ETİKET ŞAŞIRTMACASI</b></div>
+
+<section class="scene" data-slide="1" data-in="D" data-cam="pull">
+  <div class="hand t3 f" data-t="0">Bakkalda, markette…</div>
+  <div class="hand t1 f" data-t=".3">Pakette <span class="hl" data-t="1">“DOĞAL”</span> yazıyor</div>
+  <svg class="dr" width="640" height="150" viewBox="0 0 640 150"><path pathLength="1" data-t="1.6" d="M20 90 C120 20 220 150 330 70 S560 40 620 90"/></svg>
+  <div class="hand t2 f" data-t="2.2" style="color:var(--red)">Hakkı var mı?</div>
+</section>
+
+<section class="scene" data-slide="2" data-in="L" data-cam="pan">
+  <div class="hand t3 f" data-t="0">Vişneli kek</div>
+  <div style="display:flex;gap:40px;align-items:center">
+    <svg class="dr" width="260" height="260" viewBox="0 0 260 260"><circle pathLength="1" data-t=".3" cx="90" cy="170" r="55"/><circle pathLength="1" data-t=".6" cx="180" cy="180" r="50"/><path pathLength="1" data-t=".9" d="M90 115 C100 60 140 30 170 20M180 130 C175 80 165 50 170 20"/></svg>
+    <div class="body f" data-t="1.2">vişne: <b style="color:var(--grn)">doğal</b></div>
+  </div>
+  <div class="body f" data-t="2.4">kek: <b style="color:var(--red)">doğal değil</b></div>
+  <div class="hand t2 f" data-t="3.4">“doğal vişne” <span style="color:var(--red)">yazılamaz</span></div>
+</section>
+
+<section class="scene" data-slide="3" data-in="R" data-cam="push">
+  <div class="hand t2 f" data-t="0">“Doğal” yazmanın şartı:</div>
+  <div class="body f" data-t=".7">① Tek malzeme</div>
+  <div class="body f" data-t="1.7">② Katkı yok, aroma yok</div>
+  <div class="body f" data-t="2.9">③ Yapısı önemli ölçüde değişmemiş</div>
+  <svg class="dr grn" width="360" height="120" viewBox="0 0 360 120"><polyline pathLength="1" data-t="3.8" points="30,70 90,100 200,20"/></svg>
+</section>
+
+<section class="scene" data-slide="4" data-in="U" data-cam="pull">
+  <div class="hand t3 f" data-t="0">Bunlar hiç yazılamaz:</div>
+  <div class="chip">
+    <span class="tag x" data-t=".4" style="--sd:1.6s">%100 doğal</span>
+    <span class="tag x" data-t=".9" style="--sd:2.2s">en doğal</span>
+    <span class="tag x" data-t="1.4" style="--sd:2.8s">gerçek doğal</span>
+    <span class="tag x" data-t="1.9" style="--sd:3.4s">hakiki doğal</span>
+  </div>
+  <svg class="dr red" width="200" height="200" viewBox="0 0 200 200" style="align-self:center"><circle pathLength="1" data-t="3.6" cx="100" cy="100" r="80"/><line pathLength="1" data-t="4" x1="45" y1="45" x2="155" y2="155"/></svg>
+</section>
+
+<section class="scene" data-slide="5" data-in="Z" data-cam="push">
+  <div class="hand t2 f" data-t="0">Şaşırtıcı: şartı sağlarsa</div>
+  <div class="hand t3 f" data-t=".6" style="color:var(--blu)">etiketli, paketli ürün yazabilir</div>
+  <div class="chip">
+    <span class="tag" data-t="1.4">kutu süt</span><span class="tag" data-t="2">sade yoğurt</span><span class="tag" data-t="2.6">bal</span><span class="tag" data-t="3.2">yumurta</span><span class="tag" data-t="3.8">siyah çay</span>
+  </div>
+</section>
+
+<section class="scene" data-slide="6" data-in="L" data-cam="pan">
+  <div class="hand t3 f" data-t="0" style="text-decoration:line-through;text-decoration-color:var(--red)">iri yazıya</div>
+  <svg class="dr" width="200" height="120" viewBox="0 0 200 120"><path pathLength="1" data-t=".5" d="M20 60 H170 M130 25 L172 60 L130 95"/></svg>
+  <div class="hand t1 f" data-t="1.2"><span class="hl" data-t="1.6">içindekiler</span> listesi</div>
+  <svg class="dr" width="300" height="220" viewBox="0 0 300 220" style="align-self:flex-start"><rect pathLength="1" data-t="2.4" x="40" y="10" width="200" height="200" rx="16"/><path pathLength="1" data-t="2.8" d="M80 60H200M80 100H200M80 140H160"/></svg>
+</section>
+
+<section class="scene" data-slide="7" data-in="D" data-cam="push">
+  <div class="hand t1 f" data-t="0">Evindeki hangi pakette “doğal” yazıyor?</div>
+  <div class="hand t2 f pul" style="color:var(--red)">…</div>
+  <div class="hand t2 f" data-t="1.2" style="color:var(--blu)">Yorumlara yaz ↓</div>
+  <svg class="dr" width="320" height="160" viewBox="0 0 320 160"><path pathLength="1" data-t="1.8" d="M30 80 C100 10 200 150 290 70"/></svg>
+</section>
+</body></html>
