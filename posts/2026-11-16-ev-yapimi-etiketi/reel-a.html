@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0E1A2B;--aqua:#2EC4B6;--amber:#F5B700;--coral:#FF5E3A;--ink:#EAF6F5;--dim:#7FA3B5;--lime:#C5D93A}
+*{box-sizing:border-box;margin:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:var(--bg);color:var(--ink);font-family:Poppins,"DejaVu Sans",sans-serif}
+body:before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(46,196,182,.07) 1px,transparent 1px) 0 0/100% 60px,linear-gradient(90deg,rgba(46,196,182,.07) 1px,transparent 1px) 0 0/60px 100%}
+.band{position:absolute;top:100px;left:70px;right:70px;display:flex;justify-content:space-between;font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace;font-size:28px;font-weight:700;letter-spacing:.1em;color:var(--aqua);border-bottom:2px solid rgba(46,196,182,.35);padding-bottom:16px}
+.band b{color:var(--amber)}
+.scene{inset:260px 70px 480px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px}
+.big{font-weight:800;font-size:96px;line-height:1.05;text-align:center;letter-spacing:-.02em}
+.mid{font-weight:700;font-size:58px;line-height:1.2;text-align:center}
+.mono{font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace}
+.aq{color:var(--aqua)}.am{color:var(--amber)}.co{color:var(--coral)}.li{color:var(--lime)}
+.lbl{font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace;font-size:28px;letter-spacing:.14em;color:var(--dim)}
+.scan{position:absolute;left:0;right:0;height:5px;background:linear-gradient(90deg,transparent,var(--aqua),transparent);box-shadow:0 0 30px var(--aqua);animation:scan 2.2s ease-in-out infinite alternate both}
+@keyframes scan{from{top:4%}to{top:92%}}
+.pkg{width:380px;height:470px;border-radius:26px 26px 40px 40px;background:var(--amber);position:relative;border:6px solid #0b1424}
+.pkg:before{content:"";position:absolute;top:-6px;left:-6px;right:-6px;height:54px;background:#b98b00;border-radius:26px 26px 0 0}
+.pkg .lab{position:absolute;left:34px;right:34px;top:150px;background:#FFF6E3;color:#24391A;border-radius:18px;padding:28px 10px;text-align:center;font-weight:800;font-size:52px;line-height:1.1}
+.pkg .lab small{display:block;font-size:30px;color:#c2410c;margin-top:6px}
+.stamp{font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace;font-weight:700;font-size:48px;letter-spacing:.06em;padding:18px 36px;border:6px solid var(--coral);color:var(--coral);border-radius:16px;transform:rotate(-5deg)}
+.row{display:flex;align-items:center;gap:26px;width:100%;background:rgba(19,38,60,.85);border:3px solid rgba(46,196,182,.45);border-radius:24px;padding:26px 34px}
+.row .t{font-size:44px;font-weight:700;flex:1;line-height:1.15}
+.row .x{font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace;font-weight:700;font-size:34px;color:#fff;background:var(--coral);padding:10px 22px;border-radius:14px}
+.row .ok{background:var(--lime);color:#07131F}
+.chips{display:flex;flex-wrap:wrap;gap:22px;justify-content:center}
+.chip{font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace;font-size:44px;font-weight:700;padding:20px 32px;border:4px solid var(--aqua);color:var(--aqua);border-radius:18px}
+.meter{width:100%}
+.meter .h{display:flex;justify-content:space-between;font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace;font-size:34px;font-weight:700;margin-bottom:12px}
+.track{height:48px;border-radius:24px;background:rgba(127,163,181,.2);overflow:hidden}
+.fillb{height:100%;width:0;border-radius:24px;animation:fillw var(--d,1.6s) cubic-bezier(.3,.9,.3,1) both}
+@keyframes fillw{to{width:var(--w)}}
+.rise{opacity:0;animation:rise .55s ease-out both}
+@keyframes rise{from{opacity:0;transform:translateY(50px)}to{opacity:1;transform:none}}
+.pop{opacity:0;animation:pop .5s cubic-bezier(.2,1.7,.4,1) both}
+@keyframes pop{from{opacity:0;transform:scale(.4) rotate(-8deg)}to{opacity:1;transform:none}}
+.strike{position:relative;display:inline-block}
+.strike:after{content:"";position:absolute;left:-8px;top:52%;height:10px;width:0;background:var(--coral);animation:fillw .6s ease-out both;animation-delay:var(--sd,1s);--w:calc(100% + 16px)}
+.bob{animation:bob 1.6s ease-in-out infinite both}
+@keyframes bob{50%{transform:translateY(-14px)}}
+.cal{width:300px;height:300px;background:#FFF6E3;border-radius:36px;border-top:70px solid var(--coral);display:grid;place-items:center;color:#07131F;font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace;font-weight:700;font-size:88px}
+.btn{font-size:44px;font-weight:700;padding:24px 44px;border-radius:999px;background:var(--aqua);color:#07131F}
+#sb-sub span{background:rgba(7,19,31,.85)!important;border:2px solid rgba(46,196,182,.4)}
+#sb-prog{background:var(--aqua)!important}
+</style></head><body>
+<div class="band"><span>@sofrabilimi</span><b>ETİKET ŞAŞIRTMACASI</b></div>
+
+<section class="scene" data-slide="1" data-in="U" data-cam="push">
+  <div class="scan"></div>
+  <div class="pkg bob"><div class="lab">EV YAPIMI<small>erişte</small></div></div>
+  <div class="stamp pop" data-t="1.6">FABRİKADA YAZILAMAZ</div>
+  <div class="mid rise" data-t="2.6">Sepetindeki pakette ne yazıyor?</div>
+</section>
+
+<section class="scene" data-slide="2" data-in="L" data-cam="pan">
+  <div class="lbl rise" data-t="0">ETİKET TARAMASI</div>
+  <div class="chips">
+    <div class="chip pop" data-t=".3">ev yapımı</div><div class="chip pop" data-t=".8">günlük</div>
+    <div class="chip pop" data-t="1.3">köy</div><div class="chip pop" data-t="1.8">taze fırınlanmış</div>
+  </div>
+  <div class="meter rise" data-t="2.3"><div class="h"><span class="am">GÜVEN HİSSİ</span><span class="am"><span class="count" data-to="100" data-t="2.4" data-dur="1.4">0</span>%</span></div><div class="track"><div class="fillb" data-t="2.4" style="--w:100%;background:var(--amber)"></div></div></div>
+  <div class="meter rise" data-t="3.2"><div class="h"><span class="co">KANIT</span><span class="co">0%</span></div><div class="track"><div class="fillb" style="--w:2%;background:var(--coral)"></div></div></div>
+</section>
+
+<section class="scene" data-slide="3" data-in="D" data-cam="pull">
+  <div class="big rise" data-t="0" style="font-size:84px">Kurallar <span class="aq">sınırlıyor</span></div>
+  <div class="row rise" data-t=".6"><div class="t">Paketli üründe<br><span class="am">taze fırınlanmış</span></div><div class="x pop" data-t="1.3">YASAK</div></div>
+  <div class="row rise" data-t="1.6"><div class="t">Süt ürününde<br><span class="am">köy, çiftlik</span></div><div class="x pop" data-t="2.3">YASAK</div></div>
+  <div class="row rise" data-t="2.6"><div class="t">Marka adında<br><span class="am">köy ürünü izlenimi</span></div><div class="x pop" data-t="3.3">YASAK</div></div>
+</section>
+
+<section class="scene" data-slide="4" data-in="Z" data-cam="push">
+  <div class="lbl rise" data-t="0">ŞAŞIRTAN AYRINTI</div>
+  <div class="big"><span class="strike rise" data-t=".2" style="--sd:1s">EV YAPIMI</span></div>
+  <div class="mid rise" data-t="1.6" style="font-size:96px;line-height:1.05">↓</div>
+  <div class="big pop li" data-t="2.2">EV YAPIMI<br>TADINDA</div>
+  <div class="row pop" data-t="3" style="justify-content:center;width:auto"><div class="x ok">YAZILABİLİR</div></div>
+</section>
+
+<section class="scene" data-slide="5" data-in="R" data-cam="pan">
+  <div class="row rise" data-t="0" style="border-color:var(--coral)"><div class="t">Ön yüzdeki söz</div><div class="x pop" data-t=".6">KANIT DEĞİL</div></div>
+  <div style="font-size:90px" class="co rise" data-t="1">↓</div>
+  <div class="lbl rise" data-t="1.3">GÜVENİ BUNLAR VERİR</div>
+  <div class="chips"><div class="chip pop li" data-t="1.6" style="color:var(--lime);border-color:var(--lime)">kayıt</div><div class="chip pop" data-t="2">etiket</div><div class="chip pop" data-t="2.4" style="color:var(--amber);border-color:var(--amber)">analiz</div><div class="chip pop" data-t="2.8" style="color:var(--lime);border-color:var(--lime)">izlenebilirlik</div></div>
+</section>
+
+<section class="scene" data-slide="6" data-in="U" data-cam="push">
+  <div class="lbl rise" data-t="0">ETİKETİN ARKASI · KONTROL</div>
+  <div class="row rise" data-t=".3"><div class="t">Üretici adı ve adresi</div><div class="x ok pop" data-t="1.0">VAR</div></div>
+  <div class="row rise" data-t="1.4"><div class="t">Son kullanma tarihi</div><div class="x ok pop" data-t="2.1">VAR</div></div>
+  <div class="row rise" data-t="2.5"><div class="t">Parti numarası</div><div class="x ok pop" data-t="3.2">VAR</div></div>
+</section>
+
+<section class="scene" data-slide="7" data-in="L" data-cam="pull">
+  <div class="cal pop" data-t="0">31.12</div>
+  <div class="big rise" data-t=".5" style="font-size:80px">Yıl sonuna kadar<br><span class="aq">etiketini kontrol et</span></div>
+  <div class="mid rise" data-t="2.2">Rafta en çok hangisini görüyorsun?</div>
+  <div class="btn pop" data-t="3">Yorumlara yaz</div>
+</section>
+</body></html>
