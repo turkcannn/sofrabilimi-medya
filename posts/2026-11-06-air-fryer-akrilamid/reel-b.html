@@ -1,53 +1,127 @@
 <!doctype html>
 <html lang="tr"><head><meta charset="utf-8">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<!-- TEMA: TUGLA SICAK — tugla turuncu zemin, krem yazi, hardal rozet. Kanca Reel'i, 15 sn. -->
 <style>
-:root{--bg:#24391A;--lime:#C5D93A;--gold:#F5B700;--coral:#FF5E3A;--cream:#FFF6E3;--ink:#1E1A14}
+:root{--bg:#D2552F;--deep:#4A1C0C;--cream:#FFF3E0;--mustard:#FFC94A;--brick:#A33A1C}
 *{box-sizing:border-box;margin:0}
-html,body{width:1080px;height:1920px;overflow:hidden;background:var(--bg);font-family:Poppins,"DejaVu Sans",sans-serif;color:var(--cream)}
-.band{position:absolute;top:100px;left:70px;right:70px;display:flex;justify-content:space-between;font-size:30px;font-weight:800;color:var(--lime);letter-spacing:.06em}
-.band b{color:var(--gold)}
-.scene{inset:260px 70px 470px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:44px}
-.big{font-weight:800;font-size:104px;line-height:1.25;text-align:center;letter-spacing:-.02em}
-.mid{font-weight:800;font-size:64px;line-height:1.15;text-align:center}
-.hl{color:var(--ink);background:var(--lime);padding:0 20px;border-radius:18px}
-.g{color:var(--gold)} .c{color:var(--coral)}
-.pop{opacity:0;animation:pop .55s cubic-bezier(.2,1.6,.4,1) both}
-@keyframes pop{from{opacity:0;transform:scale(.5) translateY(60px)}to{opacity:1;transform:none}}
-.drop{opacity:0;animation:drop .6s cubic-bezier(.2,1.5,.4,1) both}
-@keyframes drop{from{opacity:0;transform:translateY(-160px) rotate(-8deg)}to{opacity:1;transform:none}}
-.bob{animation:bob 1.4s ease-in-out infinite alternate both}
-@keyframes bob{from{transform:translateY(-14px) rotate(-4deg)}to{transform:translateY(14px) rotate(4deg)}}
-.chip{font-size:46px;font-weight:800;padding:22px 38px;border-radius:999px;background:var(--cream);color:var(--ink)}
-.chips{display:flex;gap:24px;flex-wrap:wrap;justify-content:center}
-.ring{width:360px;height:360px;border-radius:50%;border:20px solid rgba(255,246,227,.2);display:grid;place-items:center;position:relative}
-.ring:before{content:"";position:absolute;inset:-20px;border-radius:50%;border:20px solid transparent;border-top-color:var(--lime);animation:sp 2.2s linear infinite both}
-@keyframes sp{to{transform:rotate(360deg)}}
-.ring .n{font-size:150px;font-weight:800;color:var(--gold);line-height:1}
-.ring .s{font-size:32px;font-weight:800;text-align:center}
-.shake{animation:shk .5s ease-in-out infinite alternate both}
-@keyframes shk{from{transform:rotate(-6deg)}to{transform:rotate(6deg)}}
-.btn{font-size:54px;font-weight:800;padding:28px 50px;border-radius:999px;background:var(--lime);color:var(--ink);opacity:0;animation:pop .5s cubic-bezier(.2,1.6,.4,1) both}
-#sb-sub span{background:rgba(20,34,14,.85)!important}
-#sb-prog{background:var(--lime)!important}
-</style></head><body>
-<div class="band"><span>@sofrabilimi</span><b>DOĞRU BİLİNEN YANLIŞ</b></div>
+html,body{width:1080px;height:1920px;overflow:hidden;background:var(--bg);color:var(--cream);
+  font-family:Poppins,"DejaVu Sans",sans-serif}
+body:before{content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 38%,rgba(255,220,150,.3),transparent 62%)}
+.mono{font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace;letter-spacing:.1em}
 
-<section class="scene" data-slide="1" data-in="D" data-cam="push">
-  <div class="drop" data-t="0"><div class="bob"><svg width="220" height="240" viewBox="0 0 220 240"><g fill="#F5B700"><rect x="50" y="20" width="26" height="110" rx="8"/><rect x="86" y="8" width="26" height="122" rx="8"/><rect x="122" y="24" width="26" height="106" rx="8"/><rect x="156" y="36" width="24" height="94" rx="8"/></g><path d="M30 120h160l-18 100H48z" fill="#FF5E3A"/><rect x="30" y="112" width="160" height="16" rx="8" fill="#FFF6E3"/></svg></div></div>
-  <div class="big"><span class="pop" data-t=".3">Airfryer</span><br><span class="pop hl" data-t=".7">kurtarmıyor</span><span class="pop" data-t="1.0"> mu?</span></div>
-  <div class="chips"><span class="chip drop" data-t="1.6">24 örnek</span><span class="chip drop" data-t="1.9">3 yöntem</span></div>
+/* ---- KAPAK ---- */
+.cover{background:var(--bg);padding:0 70px;gap:0}
+.cover:before{content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 38%,rgba(255,220,150,.3),transparent 62%)}
+.cover>*{position:relative}
+.cover .rozet{font-size:32px;color:var(--deep);background:var(--mustard);padding:14px 30px;
+  border-radius:999px;margin-bottom:26px}
+.cover .num{font-weight:800;font-size:380px;line-height:.82;color:var(--cream);letter-spacing:-.05em;
+  text-shadow:0 22px 50px rgba(74,28,12,.35)}
+.cover .unit{font-weight:800;font-size:118px;line-height:1;color:var(--mustard);letter-spacing:.04em}
+.cover .do{font-weight:800;font-size:82px;line-height:1.14;margin-top:34px}
+.cover .alt{font-size:40px;line-height:1.3;color:var(--deep);background:var(--mustard);
+  border-radius:18px;padding:18px 30px;margin-top:30px;font-weight:700}
+
+/* ---- SAHNELER ---- */
+.band{position:absolute;top:96px;left:70px;right:70px;display:flex;justify-content:space-between;
+  align-items:center;font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace;font-size:28px;
+  font-weight:700;letter-spacing:.1em;color:var(--mustard);
+  border-bottom:3px solid rgba(255,201,74,.35);padding-bottom:16px}
+.scene{inset:280px 70px 470px;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:46px;text-align:center}
+.big{font-weight:800;font-size:100px;line-height:1.1;letter-spacing:-.02em}
+.mid{font-weight:700;font-size:62px;line-height:1.22}
+.mu{color:var(--mustard)}
+.strike{position:relative;display:inline-block}
+.strike:after{content:"";position:absolute;left:-16px;right:-16px;top:49%;height:12px;
+  background:var(--brick);border-radius:6px;transform:rotate(-2deg)}
+
+.card{background:rgba(74,28,12,.3);border:4px solid rgba(255,201,74,.45);border-radius:30px;
+  padding:40px 46px;width:100%}
+.row{display:flex;gap:30px;justify-content:center;align-items:stretch;width:100%}
+.cell{flex:1;background:rgba(74,28,12,.55);border:3px solid rgba(255,201,74,.4);border-radius:26px;padding:34px 18px;
+  display:flex;flex-direction:column;align-items:center;gap:18px}
+.cell .nm{font-weight:700;font-size:40px}
+.cell .vv{font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace;font-weight:700;font-size:54px;color:var(--mustard)}
+.badge{font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace;font-weight:700;font-size:52px;
+  letter-spacing:.06em;background:var(--mustard);color:var(--deep);padding:22px 44px;border-radius:18px}
+.clock{width:280px;height:280px;border-radius:50%;border:18px solid rgba(74,28,12,.35);
+  display:grid;place-items:center;position:relative}
+.clock .fill{position:absolute;inset:-18px;border-radius:50%;border:18px solid transparent;
+  border-top-color:var(--mustard)}
+.clock .t{font-weight:800;font-size:110px;line-height:1;color:var(--mustard)}
+.btn{font-weight:800;font-size:58px;padding:28px 50px;border-radius:999px;
+  background:var(--mustard);color:var(--deep)}
+#sb-sub span.bg{background:rgba(74,28,12,.72)!important;border:3px solid rgba(255,201,74,.4)}
+#sb-prog{background:var(--mustard)!important}
+#sb-sub i.now{color:var(--mustard)!important}
+</style></head>
+<body>
+
+<section class="cover">
+  <div class="rozet mono">PATATES KIZARTMASI</div>
+  <div class="num">10</div>
+  <div class="unit">DAKİKA</div>
+  <div class="do">doğradıktan sonra<br>suda beklet</div>
+  <div class="alt">kızarınca oluşan madde<br>14 kat azalıyor</div>
 </section>
 
-<section class="scene" data-slide="5" data-in="L" data-cam="pan">
-  <div class="mid pop" data-t="0">Doğradıktan sonra</div>
-  <div class="ring pop" data-t=".3"><div style="text-align:center"><div class="n"><span class="count" data-to="10" data-t=".4" data-dur="1.6">0</span></div><div class="s">DAKİKA</div></div></div>
-  <div class="big pop" data-t="1.4"><span class="g">suda</span> beklet</div>
+<div class="band"><span>@sofrabilimi</span><span>DOĞRU BİLİNEN YANLIŞ</span></div>
+
+<!-- 1 kanca: inanilan iddia -->
+<section class="scene" data-slide="1" data-in="Z" data-cam="push">
+  <div class="pop" data-t="0">
+    <svg width="320" height="300" viewBox="0 0 300 300">
+      <g transform="translate(150,160)">
+        <rect x="-62" y="-118" width="26" height="130" rx="9" fill="#FFD766" transform="rotate(-11)"/>
+        <rect x="-26" y="-134" width="26" height="146" rx="9" fill="#FFF3E0"/>
+        <rect x="10"  y="-126" width="26" height="138" rx="9" fill="#FFD766" transform="rotate(9)"/>
+        <rect x="44"  y="-106" width="26" height="120" rx="9" fill="#F0BE3C" transform="rotate(16)"/>
+        <path d="M-86 -6 H86 L68 112 H-68 Z" fill="#A33A1C"/>
+        <path d="M-86 -6 H86 L80 32 H-80 Z" fill="#C9492A"/>
+      </g>
+    </svg>
+  </div>
+  <div class="big" style="display:flex;flex-direction:column;gap:34px;align-items:center">
+    <div class="in" data-t=".35">Airfryer</div>
+    <div class="in" data-t=".9"><span class="strike">daha sağlıklı</span></div>
+  </div>
+  <div class="badge in" data-t="1.5">ÖLÇÜM NE DİYOR?</div>
 </section>
 
-<section class="scene" data-slide="7" data-in="Z" data-cam="pull">
-  <div class="mid pop" data-t="0">Tek çalışma,<br>net ipucu</div>
-  <div class="pop" data-t=".5"><div class="shake"><svg width="170" height="200" viewBox="0 0 170 200"><path d="M85 190V30M30 120l55 70 55-70" fill="none" stroke="#C5D93A" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-  <div class="btn" data-t="1.1">Cevap profildeki postta</div>
+<!-- 2 uc yontem, fark yok -->
+<section class="scene" data-slide="2" data-in="R" data-cam="pan">
+  <div class="mono in" data-t="0" style="font-size:32px;color:var(--mustard)">AKRİLAMİD · µg/kg</div>
+  <div class="row">
+    <div class="cell slideL" data-t=".25"><div class="nm">Airfryer</div>
+      <div class="vv"><span class="count" data-to="12.19" data-dec="2" data-t=".4" data-dur="1.1">0</span></div></div>
+    <div class="cell slideL" data-t=".45"><div class="nm">Derin yağ</div>
+      <div class="vv"><span class="count" data-to="8.94" data-dec="2" data-t=".6" data-dur="1.1">0</span></div></div>
+    <div class="cell slideL" data-t=".65"><div class="nm">Fırın</div>
+      <div class="vv"><span class="count" data-to="7.43" data-dec="2" data-t=".8" data-dur="1.1">0</span></div></div>
+  </div>
+  <div class="badge pop" data-t="1.9" style="background:var(--brick);color:var(--cream)">ANLAMLI FARK YOK</div>
+</section>
+
+<!-- 3 asil fark -->
+<section class="scene" data-slide="3" data-in="U" data-cam="pull">
+  <div class="mid in" data-t="0">Asıl fark cihazda değil:</div>
+  <div class="clock pop" data-t=".35">
+    <div class="fill"></div>
+    <div class="t">10</div>
+  </div>
+  <div class="big in mu" data-t=".9">dakika suda beklet</div>
+</section>
+
+<!-- 4 cta -->
+<section class="scene" data-slide="4" data-in="D" data-cam="push">
+  <div class="card in" data-t="0">
+    <div class="mid">Tek çalışma, küçük örneklem.<br><span class="mu">Ama ipucu net.</span></div>
+  </div>
+  <div class="in" data-t=".6" style="font-size:96px">👆</div>
+  <div class="btn in" data-t=".9">Cevap profildeki postta</div>
 </section>
 </body></html>
