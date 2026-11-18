@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<!-- TEMA: DEFTER-ÇİZİM — kareli defter kağıdı, elle çizilen SVG, fosforlu kalem, Caveat notlar -->
+<style>
+:root{--paper:#FFFDF8;--grid:#CFE3F2;--ink:#1F2A44;--red:#E5482D;--green:#2F8F4E;--hl:#FFE45C;--blue:#2F6FB3;--brown:#C79A5B}
+*{box-sizing:border-box;margin:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:var(--paper);color:var(--ink);font-family:Poppins,"DejaVu Sans",sans-serif}
+body:before{content:"";position:absolute;inset:0;
+  background:linear-gradient(var(--grid) 2px,transparent 2px) 0 0/60px 60px,linear-gradient(90deg,var(--grid) 2px,transparent 2px) 0 0/60px 60px;opacity:.7}
+body:after{content:"";position:absolute;left:96px;top:0;bottom:0;width:4px;background:rgba(229,72,45,.35)}
+.band{position:absolute;top:100px;left:120px;right:70px;display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:34px;letter-spacing:.06em}
+.band .h{font-family:Caveat,"DejaVu Sans",cursive;font-size:52px;color:var(--blue)}
+.band .s{background:var(--ink);color:#FFE45C;padding:10px 22px;border-radius:12px;font-size:28px;letter-spacing:.14em}
+.scene{inset:260px 70px 470px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px}
+.hand{font-family:Caveat,"DejaVu Sans",cursive;font-weight:700}
+.big{font-weight:800;font-size:96px;line-height:1.08;text-align:center;letter-spacing:-.02em}
+.mid{font-weight:700;font-size:56px;line-height:1.2;text-align:center}
+.note{font-family:Caveat,"DejaVu Sans",cursive;font-weight:700;font-size:72px;line-height:1;color:var(--blue);text-align:center}
+.mk{background:linear-gradient(transparent 12%,var(--hl) 12%,var(--hl) 92%,transparent 92%);padding:0 14px;border-radius:8px;
+  background-size:0% 100%;background-repeat:no-repeat;animation:mk .7s ease-out both}
+@keyframes mk{to{background-size:100% 100%}}
+.dr{stroke-dasharray:var(--l,600);stroke-dashoffset:var(--l,600);animation:dr 1s ease-out both}
+@keyframes dr{to{stroke-dashoffset:0}}
+.strike{position:relative;display:inline-block}
+.strike:after{content:"";position:absolute;left:-8px;right:-8px;top:52%;height:12px;background:var(--red);border-radius:6px;transform-origin:left;transform:scaleX(0);animation:st .45s ease-out both;animation-delay:var(--sd,1s)}
+@keyframes st{to{transform:scaleX(1)}}
+.card{background:#fff;border:5px solid var(--ink);border-radius:26px;box-shadow:10px 10px 0 var(--ink);padding:30px 36px}
+.lab{width:900px;background:#fff;border:5px solid var(--ink);border-radius:20px;padding:30px 38px;box-shadow:10px 10px 0 rgba(31,42,68,.9);transform:rotate(-1.5deg)}
+.lab .t{font-weight:800;font-size:58px}
+.lab .r{font-size:44px;font-weight:600;margin-top:20px;padding:14px 18px;border:4px dashed var(--red);border-radius:14px;display:flex;justify-content:space-between;gap:20px}
+.lab .r b{font-weight:800}
+.two{display:flex;gap:30px;width:940px}
+.two .card{flex:1;text-align:center;font-size:44px;font-weight:700;display:grid;gap:14px;align-content:start}
+.tag{display:inline-block;font-weight:800;font-size:46px;padding:6px 20px;border-radius:14px;color:#fff}
+.bar{width:860px;height:84px;border:5px solid var(--ink);border-radius:42px;overflow:hidden;background:#fff;position:relative}
+.bar i{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--hl);animation:fill 2s cubic-bezier(.3,.8,.3,1) both}
+@keyframes fill{to{width:var(--w,80%)}}
+.cnt{font-weight:800;font-size:200px;line-height:1;color:var(--red)}
+.chk{display:flex;align-items:center;gap:26px;font-size:54px;font-weight:700;line-height:1.2}
+.chk svg{flex:none}
+.cover{background:radial-gradient(circle at 50% 46%,#FFF1C2,#F7D48A 65%,#EDB95A);overflow:hidden}
+.cover:before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(199,154,91,.25) 2px,transparent 2px) 0 0/60px 60px,linear-gradient(90deg,rgba(199,154,91,.25) 2px,transparent 2px) 0 0/60px 60px}
+.cover>*{position:relative}
+.cover .top{position:absolute;top:470px;font-weight:800;font-size:36px;letter-spacing:.16em;background:var(--ink);color:#FFE45C;padding:14px 30px;border-radius:14px}
+.cover .claim{font-weight:800;font-size:124px;line-height:1.04;color:#3E2415;letter-spacing:-.02em;margin-top:40px}
+.cover .claim em{font-style:normal;background:var(--red);color:#FFF3E0;padding:0 18px;border-radius:16px}
+.cover .badge{position:absolute;bottom:470px;font-weight:800;font-size:46px;background:#3E2415;color:#FFE45C;padding:16px 38px;border-radius:999px;transform:rotate(-3deg)}
+</style></head><body>
+<div class="band"><span class="hand h">@sofrabilimi</span><span class="s">ETİKET ŞAŞIRTMACASI</span></div>
+
+<!-- KAPAK : eksik cümle -->
+<section class="cover">
+  <div class="top">YUMURTA ETİKETİ</div>
+  <svg width="560" height="380" viewBox="0 0 560 380" style="margin-top:-60px">
+    <g transform="translate(40,40)">
+      <path d="M0 150 L50 120 L430 120 L480 150 L450 330 L30 330Z" fill="#C79A5B"/>
+      <path d="M0 150 L480 150 L450 330 L30 330Z" fill="#B3844A"/>
+      <g fill="#F6D9AE" stroke="#8A5B2B" stroke-width="6">
+        <ellipse cx="100" cy="110" rx="62" ry="82"/><ellipse cx="240" cy="96" rx="62" ry="82"/><ellipse cx="380" cy="110" rx="62" ry="82"/></g>
+      <rect x="120" y="190" width="240" height="96" rx="12" fill="#fff" stroke="#3E2415" stroke-width="6"/>
+      <rect x="140" y="236" width="200" height="34" rx="8" fill="none" stroke="#E5482D" stroke-width="6" stroke-dasharray="14 8"/>
+      <text x="240" y="226" text-anchor="middle" font-family="Poppins,DejaVu Sans" font-weight="800" font-size="30" fill="#3E2415">YUMURTA</text>
+    </g>
+  </svg>
+  <div class="claim">Tarih “son kullanma” <em>değil</em>, çünkü...</div>
+  <div class="badge">peki ne yazıyor?</div>
+</section>
+
+<!-- 1 kanca -->
+<section class="scene" data-slide="1" data-in="Z" data-cam="push">
+  <div class="note in" data-t="0">Yumurtadaki tarih</div>
+  <svg width="420" height="470" viewBox="0 0 420 470" class="bob">
+    <path class="dr" data-t=".2" style="--l:1500" d="M210 20 C330 20 380 190 380 290 C380 390 300 450 210 450 C120 450 40 390 40 290 C40 190 90 20 210 20Z" fill="#F6D9AE" stroke="#1F2A44" stroke-width="10"/>
+    <rect class="pop" data-t="1.1" x="110" y="240" width="200" height="74" rx="14" fill="#fff" stroke="#E5482D" stroke-width="8" stroke-dasharray="18 10"/>
+    <text class="pop" data-t="1.2" x="210" y="292" text-anchor="middle" font-family="Poppins,DejaVu Sans" font-weight="800" font-size="44" fill="#E5482D">TARİH</text>
+  </svg>
+  <div class="big in" data-t=".6"><span class="strike" style="--sd:1.5s">son kullanma</span> tarihi değil</div>
+</section>
+
+<!-- 2 etiket + büyüteç -->
+<section class="scene" data-slide="2" data-in="R" data-cam="pan">
+  <div class="mid in" data-t="0">Pakette bir tarih var</div>
+  <div class="lab slideL" data-t=".3">
+    <div class="t">YUMURTA · A SINIFI</div>
+    <div class="r"><span><span class="mk" style="animation-delay:1.8s">tavsiye edilen tüketim tarihi</span></span></div>
+    <div class="hand" style="font-size:60px;text-align:right;margin-top:14px">08.12.2026</div>
+  </div>
+  <svg width="220" height="220" viewBox="0 0 220 220" class="drop" data-t="1" style="margin-top:-10px">
+    <circle cx="90" cy="90" r="64" fill="rgba(255,228,92,.35)" stroke="#1F2A44" stroke-width="14"/>
+    <line x1="138" y1="138" x2="200" y2="200" stroke="#1F2A44" stroke-width="22" stroke-linecap="round"/>
+  </svg>
+  <div class="note in" data-t="2.4">hangi tarih türü yazıyor?</div>
+</section>
+
+<!-- 3 takvim -->
+<section class="scene" data-slide="3" data-in="D" data-cam="pull">
+  <div class="card flyUp" data-t="0" style="width:560px;text-align:center;padding:0;overflow:hidden">
+    <div style="background:var(--red);color:#fff;font-weight:800;font-size:48px;padding:16px;letter-spacing:.12em">TEMMUZ</div>
+    <div class="cnt" style="color:var(--ink);font-size:190px;padding:14px 0 4px"><span class="count" data-to="2025" data-t=".3" data-dur="1.2">0</span></div>
+  </div>
+  <div class="note in" data-t="1.2">etikette artık</div>
+  <div class="big in" data-t="1.7" style="font-size:80px"><span class="mk" style="animation-delay:2.2s">tavsiye edilen</span><br>tüketim tarihi</div>
+  <svg width="420" height="120" viewBox="0 0 420 120"><path class="dr" data-t="3" style="--l:500" d="M20 60 C120 10 240 110 390 50 M360 20 L396 50 L356 84" fill="none" stroke="#2F8F4E" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <div class="note in" data-t="3.4" style="color:var(--green)">= en iyi hâli</div>
+</section>
+
+<!-- 4 eski / yeni + 28 gün -->
+<section class="scene" data-slide="4" data-in="L" data-cam="push">
+  <div class="two">
+    <div class="card slideL" data-t="0" style="transform:rotate(-2deg)">
+      <span class="tag" style="background:var(--red)">ESKİ</span>
+      <div style="font-size:42px">Son tüketim tarihi</div>
+      <svg width="90" height="90" viewBox="0 0 90 90" style="margin:0 auto"><path class="dr" data-t=".9" style="--l:200" d="M16 16 L74 74 M74 16 L16 74" stroke="#E5482D" stroke-width="14" stroke-linecap="round"/></svg>
+    </div>
+    <div class="card slideR" data-t=".3" style="transform:rotate(2deg)">
+      <span class="tag" style="background:var(--green)">YENİ</span>
+      <div style="font-size:42px">Tavsiye edilen tüketim tarihi</div>
+      <svg width="90" height="90" viewBox="0 0 90 90" style="margin:0 auto"><path class="dr" data-t="1.3" style="--l:200" d="M14 48 L36 70 L78 18" fill="none" stroke="#2F8F4E" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+  </div>
+  <div class="cnt in" data-t="1.8"><span class="count" data-to="28" data-t="1.9" data-dur="1.4">0</span> <span class="hand" style="font-size:90px;color:var(--ink)">gün</span></div>
+  <div class="bar in" data-t="2"><i style="--w:93%" data-t="2.1"></i></div>
+  <div class="note in" data-t="2.6">yumurtlamadan sana ulaşma süresi</div>
+</section>
+
+<!-- 5 paketli / etiketsiz -->
+<section class="scene" data-slide="5" data-in="U" data-cam="pan">
+  <div class="mid in" data-t="0">Bu tarihe kadar tüket,<br>doğru sakla</div>
+  <div class="two">
+    <div class="card pop" data-t=".5">
+      <span class="tag" style="background:var(--green)">PAKETLİ</span>
+      <div class="chk" style="font-size:44px"><svg width="56" height="56" viewBox="0 0 56 56"><path class="dr" data-t=".9" style="--l:120" d="M8 30 L22 44 L48 10" fill="none" stroke="#2F8F4E" stroke-width="9" stroke-linecap="round"/></svg>tarih</div>
+      <div class="chk" style="font-size:44px"><svg width="56" height="56" viewBox="0 0 56 56"><path class="dr" data-t="1.2" style="--l:120" d="M8 30 L22 44 L48 10" fill="none" stroke="#2F8F4E" stroke-width="9" stroke-linecap="round"/></svg>sınıf</div>
+      <div class="chk" style="font-size:44px"><svg width="56" height="56" viewBox="0 0 56 56"><path class="dr" data-t="1.5" style="--l:120" d="M8 30 L22 44 L48 10" fill="none" stroke="#2F8F4E" stroke-width="9" stroke-linecap="round"/></svg>paket bilgisi</div>
+    </div>
+    <div class="card pop" data-t=".8">
+      <span class="tag" style="background:var(--red)">ETİKETSİZ</span>
+      <div class="cnt shake" data-t="2" style="font-size:230px;color:var(--ink)">?</div>
+      <div style="font-size:40px;font-weight:600">ne zaman yumurtlandığı belli değil</div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 kontrol listesi -->
+<section class="scene" data-slide="6" data-in="R" data-cam="push">
+  <div class="note in" data-t="0" style="font-size:84px">Rafta işine yarar</div>
+  <div class="card in" data-t=".3" style="width:900px;display:grid;gap:34px;transform:rotate(-1deg)">
+    <div class="chk"><svg width="70" height="70" viewBox="0 0 70 70"><path class="dr" data-t=".8" style="--l:140" d="M10 38 L28 56 L60 12" fill="none" stroke="#2F8F4E" stroke-width="11" stroke-linecap="round"/></svg>Paketli, etiketli yumurta seç</div>
+    <div class="chk"><svg width="70" height="70" viewBox="0 0 70 70"><path class="dr" data-t="1.6" style="--l:140" d="M10 38 L28 56 L60 12" fill="none" stroke="#2F8F4E" stroke-width="11" stroke-linecap="round"/></svg><span>Tarihi <span class="mk" style="animation-delay:1.9s">bul</span></span></div>
+    <div class="chk"><svg width="70" height="70" viewBox="0 0 70 70"><path class="dr" data-t="2.4" style="--l:140" d="M10 38 L28 56 L60 12" fill="none" stroke="#2F8F4E" stroke-width="11" stroke-linecap="round"/></svg>Tarihe kadar tüket</div>
+  </div>
+  <svg width="200" height="150" viewBox="0 0 200 150" class="bob"><ellipse cx="100" cy="76" rx="52" ry="68" fill="#F6D9AE" stroke="#1F2A44" stroke-width="9"/></svg>
+</section>
+
+<!-- 7 CTA -->
+<section class="scene" data-slide="7" data-in="Z" data-cam="pull">
+  <div class="big in" data-t="0" style="font-size:84px;position:relative;padding:90px 80px">
+    Sen yumurta alırken<br>tarihe bakıyor musun?
+    <svg style="position:absolute;inset:-10px;width:calc(100% + 20px);height:calc(100% + 20px)" viewBox="0 0 800 340" preserveAspectRatio="none"><ellipse class="dr" data-t=".9" style="--l:2400" cx="400" cy="170" rx="385" ry="150" fill="none" stroke="#E5482D" stroke-width="9" stroke-linecap="round"/></svg>
+  </div>
+  <div style="display:flex;gap:30px;margin-top:20px">
+    <div class="card pop" data-t="1.6" style="font-size:48px;font-weight:700;background:var(--hl)">Yorumlara yaz</div>
+    <div class="card pop" data-t="2" style="font-size:48px;font-weight:700;background:#fff">Kaydet</div>
+  </div>
+</section>
+</body></html>

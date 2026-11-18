@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<!-- TEMA: POP-STICKER -->
+<style>
+:root{--bg:#FFF6E3;--ink:#111;--coral:#FF5E3A;--lime:#C5D93A;--gold:#F5B700}
+*{box-sizing:border-box;margin:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:var(--bg);color:var(--ink);font-family:Poppins,"DejaVu Sans",sans-serif}
+body:before{content:"";position:absolute;inset:0;background:radial-gradient(circle,rgba(17,17,17,.1) 3px,transparent 4px) 0 0/48px 48px}
+.band{position:absolute;top:110px;left:70px;right:70px;display:flex;justify-content:space-between;align-items:center;font-weight:800;font-size:34px}
+.band .a{background:var(--ink);color:var(--lime);padding:10px 24px;border-radius:14px}
+.band .b{background:var(--coral);color:#fff;padding:10px 24px;border-radius:14px;border:5px solid var(--ink);font-size:28px;letter-spacing:.08em}
+.scene{inset:260px 70px 470px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:40px}
+.st{border:8px solid var(--ink);border-radius:34px;box-shadow:12px 12px 0 var(--ink);padding:32px 40px;font-weight:800;text-align:center}
+.big{font-weight:800;font-size:104px;line-height:1.05;text-align:center;letter-spacing:-.02em}
+.sp{opacity:0;animation:spr .7s cubic-bezier(.2,1.9,.4,1) both}
+@keyframes spr{from{opacity:0;transform:scale(.3) rotate(-14deg)}to{opacity:1;transform:rotate(var(--r,0deg))}}
+.arrow{font-size:150px;font-weight:800;line-height:1;opacity:0;animation:arr .6s ease-out both}
+@keyframes arr{from{opacity:0;transform:translateY(-80px)}to{opacity:1;transform:none}}
+.stamp{font-weight:800;font-size:70px;padding:16px 40px;border:10px solid var(--coral);color:var(--coral);border-radius:18px;opacity:0;animation:stp .4s cubic-bezier(.2,1.8,.4,1) both;--r:-6deg;background:var(--bg)}
+@keyframes stp{from{opacity:0;transform:scale(2.6) rotate(10deg)}to{opacity:1;transform:rotate(-6deg)}}
+.cover{gap:22px;background:radial-gradient(circle at 50% 45%,#F58A5A,#D2552F 60%,#A83A1B);overflow:hidden}
+.cover>*{position:relative}
+.cover .top{font-weight:800;font-size:36px;letter-spacing:.14em;background:#FFF3E0;color:#4A1C0C;padding:14px 32px;border-radius:999px}
+.cover .num{font-weight:800;font-size:340px;line-height:.85;color:#FFF3E0;letter-spacing:-.05em;text-shadow:0 22px 50px rgba(74,28,12,.4);margin-top:10px}
+.cover .unit{font-weight:800;font-size:130px;color:#FFC94A;letter-spacing:.04em;line-height:1}
+.cover .badge{margin-top:10px;font-weight:800;font-size:48px;background:#FFC94A;color:#4A1C0C;padding:16px 40px;border-radius:18px;transform:rotate(-3deg)}
+.cover svg{position:relative}
+</style></head><body>
+<div class="band"><span class="a">@sofrabilimi</span><span class="b">ETİKET ŞAŞIRTMACASI</span></div>
+
+<section class="cover">
+  <div class="top">YUMURTA TARİHİ</div>
+  <svg width="380" height="380" viewBox="0 0 380 380" style="transform:rotate(-6deg);margin-top:0">
+    <path d="M10 140 L50 110 L330 110 L370 140 L345 340 L35 340Z" fill="#E7B877"/><path d="M10 140 L370 140 L345 340 L35 340Z" fill="#C99350"/>
+    <g fill="#FBE4C0" stroke="#5A2A12" stroke-width="7"><ellipse cx="90" cy="100" rx="52" ry="70"/><ellipse cx="190" cy="86" rx="52" ry="70"/><ellipse cx="290" cy="100" rx="52" ry="70"/></g>
+    <rect x="95" y="190" width="190" height="90" rx="12" fill="#fff" stroke="#5A2A12" stroke-width="7"/>
+    <text x="190" y="228" text-anchor="middle" font-family="Poppins,DejaVu Sans" font-weight="800" font-size="30" fill="#5A2A12">YUMURTA</text>
+    <rect x="115" y="240" width="150" height="26" rx="6" fill="none" stroke="#E5482D" stroke-width="6" stroke-dasharray="12 7"/>
+  </svg>
+  <div class="num">28</div>
+  <div class="unit">GÜN</div>
+  <div class="badge">en fazla, yumurtlamadan sana</div>
+</section>
+
+<!-- 1 -->
+<section class="scene" data-slide="1" data-in="D" data-cam="pull">
+  <div class="st sp" data-t="0" style="--r:-3deg;background:var(--gold);font-size:64px">YUMURTADAKİ TARİH</div>
+  <div class="big pop" data-t=".5">önündeki<br><span style="background:var(--coral);color:#fff;padding:0 22px;border-radius:20px;display:inline-block;transform:rotate(-2deg)">kelimeye</span><br>baktın mı?</div>
+  <svg class="bob" width="300" height="200" viewBox="0 0 300 200"><path class="pop" data-t="1.4" d="M30 150 L110 40 L190 150 L240 90" fill="none" stroke="#111" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</section>
+
+<!-- 4 -->
+<section class="scene" data-slide="4" data-in="R" data-cam="push">
+  <div class="st sp" data-t="0" style="--r:-4deg;background:#fff;font-size:56px;width:860px"><span style="color:var(--coral);text-decoration:line-through;text-decoration-thickness:10px">Son tüketim tarihi</span><div class="stamp" data-t="1.1" style="display:block;margin-top:20px;font-size:46px">ESKİ KALIP</div></div>
+  <div class="arrow" data-t="1.6">↓</div>
+  <div class="st sp" data-t="2" style="--r:3deg;background:var(--lime);font-size:58px;width:860px">Tavsiye edilen<br>tüketim tarihi</div>
+  <div class="st sp" data-t="2.8" style="--r:-2deg;background:var(--gold);font-size:52px">= en iyi hâli</div>
+</section>
+
+<!-- 7 -->
+<section class="scene" data-slide="7" data-in="Z" data-cam="pan">
+  <div class="st sp" data-t="0" style="--r:-3deg;background:var(--lime);font-size:70px;width:900px">Paketli,<br>etiketli yumurta seç</div>
+  <svg class="bob" width="240" height="300" viewBox="0 0 240 300"><ellipse class="sp" data-t=".5" cx="120" cy="150" rx="100" ry="130" fill="#FBE4C0" stroke="#111" stroke-width="10"/><path class="sp" data-t="1" d="M60 150 L105 195 L180 105" fill="none" stroke="#2F8F4E" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <div class="st sp" data-t="1.6" style="--r:3deg;background:var(--coral);color:#fff;font-size:60px">Cevabı profildeki postta</div>
+</section>
+</body></html>
