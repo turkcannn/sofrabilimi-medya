@@ -1,0 +1,55 @@
+<!doctype html><html lang="tr"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0E1A2B;--tq:#2EC4B6;--w:#E8F4F2;--am:#FFC94A}
+*{box-sizing:border-box;margin:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:var(--bg);font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace;color:var(--w)}
+body:before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(46,196,182,.12) 2px,transparent 2px) 0 0/60px 60px,linear-gradient(90deg,rgba(46,196,182,.12) 2px,transparent 2px) 0 0/60px 60px}
+.handle{position:absolute;top:100px;width:100%;text-align:center;font-weight:700;font-size:40px;color:var(--tq)}
+.series{position:absolute;top:165px;width:100%;text-align:center;font-size:30px;font-weight:700;letter-spacing:.14em;color:var(--am)}
+.scene{inset:260px 70px 470px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:40px;text-align:center}
+.big{font-weight:700;font-size:96px;line-height:1.1}
+.mid{font-weight:600;font-size:58px;line-height:1.25}
+.tq{color:var(--tq)}
+.tag{font-size:44px;font-weight:700;padding:16px 30px;border:5px solid var(--tq);border-radius:14px;color:var(--tq)}
+.scan{position:absolute;left:0;right:0;height:8px;background:var(--tq);box-shadow:0 0 40px var(--tq);animation:sc 2.4s linear infinite alternate}
+@keyframes sc{from{top:280px}to{top:1400px}}
+.bar{width:860px;height:84px;border:5px solid var(--tq);border-radius:12px;position:relative;overflow:hidden}
+.bar i{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--tq);animation:f 2.2s ease-out both;animation-delay:var(--dl,.4s)}
+@keyframes f{to{width:var(--w)}}
+.num{font-weight:700;font-size:230px;line-height:1;color:var(--am)}
+.cover{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;padding:0 60px;background:radial-gradient(circle at 50% 38%,rgba(255,220,150,.35),transparent 62%),#D2552F;color:#FFF3E0;font-family:"IBM Plex Mono","DejaVu Sans Mono",monospace}
+.cover .seri{font-size:32px;color:#4A1C0C;background:#FFC94A;padding:14px 30px;border-radius:999px;font-weight:700;margin-bottom:20px}
+.cover .n{font-weight:700;font-size:300px;line-height:.9;letter-spacing:-.05em;text-shadow:0 22px 50px rgba(74,28,12,.35)}
+.cover .u{font-weight:700;font-size:96px;color:#FFC94A}
+.cover .do{font-weight:700;font-size:70px;line-height:1.15;margin-top:24px}
+</style></head><body>
+<div class="handle">@sofrabilimi</div><div class="series">DOĞRU BİLİNEN YANLIŞ</div>
+
+<section class="cover">
+ <div class="seri">BAL ŞEKERLENDİ</div>
+ <svg width="300" height="300" viewBox="0 0 380 440"><rect x="70" y="20" width="240" height="50" rx="10" fill="#FFF3E0"/><path d="M60 80h260v300a40 40 0 0 1-40 40H100a40 40 0 0 1-40-40z" fill="#FFC94A" stroke="#FFF3E0" stroke-width="10"/><g fill="#FFF3C4"><circle cx="120" cy="300" r="12"/><circle cx="220" cy="310" r="13"/><circle cx="170" cy="250" r="10"/></g></svg>
+ <div class="n">15°C</div>
+ <div class="do">serin yerde bal daha hızlı şekerlenir</div>
+</section>
+
+<section class="scene" data-slide="1" data-in="D" data-cam="push">
+ <div class="scan"></div>
+ <div class="tag pop" data-t="0">ANALİZ</div>
+ <div class="big in" data-t=".4">Şekerlenen bal <span class="tq">atılır mı?</span></div>
+ <div class="mid in" data-t="1.4">Bir dakika.</div>
+</section>
+
+<section class="scene" data-slide="4" data-in="R" data-cam="pan">
+ <div class="mid in" data-t="0">Çok şeker → kristal</div>
+ <div class="bar" style="--w:100%"><i style="--dl:.3s"></i></div>
+ <div class="num"><span class="count" data-to="15" data-t=".3" data-dur="1.6">0</span>°</div>
+ <div class="mid in" data-t="1.4">serinde en hızlı şekerlenir</div>
+</section>
+
+<section class="scene" data-slide="7" data-in="Z" data-cam="pull">
+ <div class="tag pop" data-t="0">SONUÇ</div>
+ <div class="big in" data-t=".4">Rengine bakarak <span class="tq">anlaşılmaz</span></div>
+ <div class="tag pulse" data-t="1.4" style="color:var(--am);border-color:var(--am)">Cevap profildeki postta</div>
+</section>
+</body></html>
