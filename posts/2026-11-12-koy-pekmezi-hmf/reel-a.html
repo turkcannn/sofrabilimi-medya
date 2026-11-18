@@ -1,96 +1,99 @@
 <!doctype html>
 <html lang="tr"><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@500;700;800&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<!-- TEMA: gazete-manseti -->
 <style>
-:root{--paper:#F4EFE3;--ink:#1B1B1B;--red:#C8341E;--grey:#6B675E;--gold:#E8B12A;--grn:#1E7A3A}
+:root{--paper:#F4EFE3;--ink:#1B1B1B;--red:#C8341E;--gold:#E8B12A}
 *{box-sizing:border-box;margin:0}
 html,body{width:1080px;height:1920px;overflow:hidden;background:var(--paper);color:var(--ink);font-family:Poppins,"DejaVu Sans",sans-serif}
-.mast{position:absolute;top:90px;left:70px;right:70px;border-top:6px solid var(--ink);border-bottom:2px solid var(--ink);padding:14px 0;display:flex;justify-content:space-between;font-weight:700;font-size:30px;letter-spacing:.1em}
-.mast b{font-family:"DM Serif Display","DejaVu Sans",serif;font-size:40px;letter-spacing:0;font-weight:400}
-.scene{inset:260px 70px 470px;display:flex;flex-direction:column;justify-content:center;gap:34px}
-.head{font-family:"DM Serif Display","DejaVu Sans",serif;font-size:112px;line-height:1.04}
-.head2{font-family:"DM Serif Display","DejaVu Sans",serif;font-size:88px;line-height:1.06}
-.body{font-size:52px;line-height:1.3;font-weight:500}
-.fade{opacity:0;animation:fade .7s ease-out both}
-@keyframes fade{from{opacity:0;transform:translateY(34px)}to{opacity:1;transform:none}}
-.mark{background:linear-gradient(var(--gold),var(--gold)) no-repeat 0 85%/0% 38%;animation:mark .8s ease-out both}
-@keyframes mark{to{background-size:100% 38%}}
-.stamp{align-self:center;font-weight:800;font-size:130px;letter-spacing:.05em;color:var(--red);border:16px solid var(--red);border-radius:24px;padding:0 44px;transform:rotate(-9deg);opacity:0;animation:stamp .45s cubic-bezier(.3,1.8,.5,1) both}
-.stamp.ok{color:var(--grn);border-color:var(--grn)}
-@keyframes stamp{from{opacity:0;transform:rotate(-9deg) scale(2.6)}to{opacity:.92;transform:rotate(-9deg) scale(1)}}
-.note{font-family:Caveat,"DejaVu Sans",cursive;font-size:84px;color:var(--red);opacity:0;animation:fade .6s ease-out both}
+body:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.025) 0 2px,transparent 2px 6px)}
+.mast{position:absolute;top:96px;left:70px;right:70px;border-top:6px solid var(--ink);border-bottom:2px solid var(--ink);padding:14px 0;display:flex;justify-content:space-between;font-weight:700;font-size:30px;letter-spacing:.1em}
+.mast b{font-family:"DM Serif Display",serif;font-size:40px;letter-spacing:0;font-weight:400}
+.scene{inset:270px 70px 470px;display:flex;flex-direction:column;justify-content:center;gap:34px}
+.head{font-family:"DM Serif Display",Georgia,serif;font-size:112px;line-height:1.04}
+.head2{font-family:"DM Serif Display",Georgia,serif;font-size:84px;line-height:1.06}
+.body{font-size:52px;line-height:1.3;font-weight:600}
 .rule{height:5px;background:var(--ink);transform-origin:left;animation:rule .6s ease-out both}
 @keyframes rule{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-.bar{height:70px;border:5px solid var(--ink);position:relative;background:#fff}
-.bar i{position:absolute;left:0;top:0;bottom:0;background:var(--gold);width:0;animation:w 1.6s ease-out both}
-.bar.r i{background:var(--red)}
-@keyframes w{to{width:var(--w)}}
-.lim{position:absolute;top:-24px;bottom:-24px;width:6px;background:var(--ink);left:var(--l)}
-.dots{display:grid;grid-template-columns:repeat(6,1fr);gap:20px;justify-items:center}
-.dot{width:110px;height:110px;border-radius:50%;background:#B9AD8E;border:6px solid var(--ink);opacity:0;animation:pop .45s cubic-bezier(.3,1.8,.5,1) both}
-.dot.p{background:var(--red)}
-@keyframes pop{from{opacity:0;transform:scale(0)}to{opacity:1;transform:scale(1)}}
-.tag{border:6px dashed var(--ink);padding:26px 30px;font-size:46px;line-height:1.35;background:#fff;align-self:center;width:88%;transform:rotate(-1.5deg);animation:fade .7s both}
-.spin{animation:sp 3s linear infinite;align-self:center}
-@keyframes sp{to{transform:rotate(360deg)}}
-.ctr{font-family:"DM Serif Display","DejaVu Sans",serif;font-size:210px;line-height:1}
+.mark{background:linear-gradient(var(--gold),var(--gold)) no-repeat 0 85%/0% 38%;animation:mark .8s ease-out both}
+@keyframes mark{to{background-size:100% 38%}}
+.stamp{align-self:center;font-weight:800;font-size:110px;letter-spacing:.05em;color:var(--red);border:14px solid var(--red);border-radius:22px;padding:0 44px;transform:rotate(-8deg);opacity:0;animation:stamp .45s cubic-bezier(.3,1.8,.5,1) both}
+.stamp.ok{color:#1E7A3A;border-color:#1E7A3A}
+@keyframes stamp{from{opacity:0;transform:rotate(-8deg) scale(2.6)}to{opacity:.92;transform:rotate(-8deg) scale(1)}}
+.note{font-family:Caveat,cursive;font-size:84px;color:var(--red)}
+.row{display:flex;gap:28px;justify-content:center;align-items:flex-end}
+.jr{width:60px;height:150px;border-radius:12px 12px 6px 6px;background:#5A2A12;border:6px solid var(--ink)}
+.jr.f{background:#E8B12A}
+.limit{position:relative;height:420px;display:flex;align-items:flex-end;gap:40px;justify-content:center;border-bottom:6px solid var(--ink)}
+.lb{width:190px;border-radius:12px 12px 0 0;height:0;animation:grow 1.4s cubic-bezier(.3,.9,.3,1) both;position:relative}
+@keyframes grow{to{height:var(--h)}}
+.lb span{position:absolute;top:-62px;left:0;right:0;text-align:center;font-weight:800;font-size:44px}
+.line{position:absolute;left:0;right:0;bottom:200px;border-top:6px dashed var(--red);animation:rule .6s both}
+.lt{position:absolute;right:0;bottom:212px;font-weight:700;font-size:36px;color:var(--red)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.col{border-top:5px solid var(--ink);padding-top:16px;font-size:46px;font-weight:600;line-height:1.25}
+.col b{display:block;font-family:"DM Serif Display",serif;font-size:60px;font-weight:400}
 #sb-sub span{background:var(--ink)!important;color:var(--paper)}
 #sb-prog{background:var(--red)!important}
+/* KAPAK */
+.cover{background:#3E2415;color:#FFF3E0;gap:26px;padding:0 60px}
+.cover:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 42%,rgba(245,166,35,.38),transparent 62%)}
+.cover>*{position:relative}
+.cover .seri{font-size:32px;font-weight:700;letter-spacing:.12em;color:#3E2415;background:#FFC94A;padding:14px 32px;border-radius:999px}
+.cover .claim{font-weight:800;font-size:104px;line-height:1.14;letter-spacing:-.02em}
+.cover .claim s{text-decoration:none;position:relative;display:inline-block}
+.cover .claim s:after{content:"";position:absolute;left:-14px;right:-14px;top:50%;height:13px;background:#E03E1A;border-radius:6px;transform:rotate(-2deg)}
+.cover .st{font-weight:800;font-size:76px;color:#3E2415;background:#F5A623;padding:22px 50px;border-radius:18px;transform:rotate(-5deg)}
 </style></head><body>
 <div class="mast"><span>@sofrabilimi</span><b>Doğru Bilinen Yanlış</b></div>
 
-<section class="scene" data-slide="1">
-  <div class="body fade" data-t="0">Herkesin bildiği:</div>
-  <div class="head fade" data-t=".3">“Köy pekmezi her zaman <span class="mark" data-t="1.2">daha iyi</span>”</div>
+<section class="cover">
+  <div class="seri">DOĞRU BİLİNEN YANLIŞ</div>
+  <svg width="420" height="430" viewBox="0 0 300 300"><rect x="80" y="14" width="140" height="34" rx="9" fill="#F5A623"/><path d="M62 54 h176 v190 a34 34 0 0 1 -34 34 h-108 a34 34 0 0 1 -34 -34z" fill="#5A2A12" stroke="#FFC94A" stroke-width="8"/><rect x="82" y="120" width="136" height="96" rx="12" fill="#FFF3E0"/><circle cx="130" cy="168" r="13" fill="#7B2D8E"/><circle cx="154" cy="158" r="13" fill="#7B2D8E"/><circle cx="176" cy="172" r="13" fill="#7B2D8E"/><path d="M150 140 q10 -22 28 -20" stroke="#4E8F2F" stroke-width="7" fill="none"/><path d="M88 80 q6 24 4 36" stroke="#FFD58A" stroke-width="9" fill="none" opacity=".5"/></svg>
+  <div class="claim"><s>KÖY PEKMEZİ</s><br><s>DAHA İYİ</s></div>
+  <div class="st">ÖLÇMEDEN BİLİNMEZ</div>
+</section>
+
+<section class="scene" data-slide="1" data-in="Z" data-cam="push">
+  <div class="body in" data-t="0">Herkesin bildiği:</div>
+  <div class="head in" data-t=".3">“Köy pekmezi <span class="mark" data-t="1.1">daha doğal</span>”</div>
   <div class="rule" data-t=".2"></div>
-  <div class="note" data-t="2.4">Peki doğru mu?</div>
+  <div class="note in" data-t="1.8">Gerçekten öyle mi?</div>
 </section>
 
-<section class="scene" data-slide="2">
-  <svg class="spin" data-t="0" width="260" height="260" viewBox="0 0 260 260"><circle cx="130" cy="130" r="100" fill="none" stroke="#1B1B1B" stroke-width="12" stroke-dasharray="40 24"/><circle cx="130" cy="130" r="50" fill="#C8341E"/></svg>
-  <div class="head fade" data-t=".2">Isındıkça artan madde: <span class="mark" data-t="1">HMF</span></div>
-  <div class="body fade" data-t="2">Yüksekse pekmez “yanmış” demek.</div>
-</section>
-
-<section class="scene" data-slide="3">
-  <div class="head2 fade" data-t="0">12 pekmez, laboratuvar</div>
-  <div class="dots">
-    <div class="dot" data-t=".3"></div><div class="dot" data-t=".4"></div><div class="dot" data-t=".5"></div><div class="dot" data-t=".6"></div><div class="dot" data-t=".7"></div><div class="dot" data-t=".8"></div>
-    <div class="dot" data-t=".9"></div><div class="dot" data-t="1"></div><div class="dot" data-t="1.1"></div><div class="dot" data-t="1.2"></div><div class="dot p" data-t="2.4"></div><div class="dot p" data-t="2.6"></div>
+<section class="scene" data-slide="2" data-in="R" data-cam="pan">
+  <div class="head2 in" data-t="0">Laboratuvarda ölçülen pekmez:</div>
+  <div class="row" style="flex-wrap:wrap;max-width:900px;align-self:center">
+    <div class="jr f pop" data-t=".4"></div><div class="jr f pop" data-t=".5"></div><div class="jr f pop" data-t=".6"></div><div class="jr f pop" data-t=".7"></div><div class="jr f pop" data-t=".8"></div>
+    <div class="jr f pop" data-t=".9"></div><div class="jr f pop" data-t="1"></div><div class="jr f pop" data-t="1.1"></div><div class="jr f pop" data-t="1.2"></div><div class="jr f pop" data-t="1.3"></div>
+    <div class="jr pop" data-t="1.7"></div><div class="jr pop" data-t="1.9"></div>
   </div>
-  <div class="body fade" data-t="1.4">10 market</div>
-  <div class="body fade" data-t="2.8" style="color:var(--red)">2 pazar</div>
+  <div class="head in" data-t="1.2" style="text-align:center"><span class="count" data-to="12" data-t="0.2" data-dur="1.1">0</span> pekmez</div>
+  <div class="body in" data-t="2.2" style="text-align:center">10 market · 2 pazar</div>
 </section>
 
-<section class="scene" data-slide="4">
-  <div class="body fade" data-t="0">Yasal sınır: kg’da 75 mg (çizgi)</div>
-  <div class="body fade" data-t=".2">Market en yüksek: 29</div>
-  <div class="bar fade" data-t=".2"><i style="--w:22%;animation-delay:.5s"></i><div class="lim" style="--l:55%"></div></div>
-  <div class="body fade" data-t=".8">Pazar, geleneksel: 136</div>
-  <div class="bar r fade" data-t=".8"><i style="--w:100%;animation-delay:1.3s"></i><div class="lim" style="--l:55%"></div></div>
-  <div class="stamp" data-t="2.6">2 KATI</div>
+<section class="scene" data-slide="4" data-in="L" data-cam="pull">
+  <div class="body in" data-t="0" style="text-align:center">Pazardan alınan bir geleneksel pekmez</div>
+  <div class="limit">
+    <div class="lb" data-t="0.4" style="--h:200px;background:#1E7A3A;animation-delay:.4s"><span>YASAL SINIR</span></div>
+    <div class="lb" data-t="1" style="--h:380px;background:var(--red);animation-delay:1s"><span>≈ 2 KAT</span></div>
+  </div>
+  <div class="stamp" data-t="3">SINIRI AŞTI</div>
 </section>
 
-<section class="scene" data-slide="5">
-  <div class="head2 fade" data-t="0">Kontrollü ürün</div>
-  <div class="body fade" data-t=".4">Hata analizle yakalanır.</div>
-  <div class="stamp ok" data-t="1.2" style="font-size:100px">ÖLÇÜLÜR</div>
-  <div class="head2 fade" data-t="2.6">Kontrolsüz ürün</div>
-  <div class="note" data-t="3.2">Kimse ölçmez.</div>
-</section>
-
-<section class="scene" data-slide="6">
-  <div class="head2 fade" data-t="0">Ne alacaksın?</div>
-  <div class="rule" data-t=".2"></div>
-  <div class="tag" data-t=".6"><b>ETİKETLİ</b> · içindekiler · üretici adı ve adresi</div>
-  <div class="tag" data-t="1.4" style="transform:rotate(1.5deg)"><b>KAYITLI</b> · işletme kayıt numarası</div>
-  <div class="stamp ok" data-t="2.4" style="font-size:100px">AÇIK ALMA</div>
-</section>
-
-<section class="scene" data-slide="7">
-  <div class="head fade" data-t="0">Sen de böyle mi biliyordun?</div>
+<section class="scene" data-slide="6" data-in="U" data-cam="push">
+  <div class="head2 in" data-t="0">Açık pekmez: <span class="mark" data-t=".6">kimse ölçmüyor</span></div>
   <div class="rule" data-t=".3"></div>
-  <div class="note" data-t="1">Yorumda tartışalım.</div>
-  <div class="body fade" data-t="1.8">Kaydet, pekmez alan birine gönder.</div>
+  <div class="cols">
+    <div class="col in" data-t="1.4"><b>Etiketli</b>Üretici adı ve kayıt numarası var.</div>
+    <div class="col in" data-t="2"><b>İzlenebilir</b>Nereden geldiği belli.</div>
+  </div>
+  <div class="stamp ok" data-t="2.8" style="font-size:90px">BUNU SEÇ</div>
+</section>
+
+<section class="scene" data-slide="7" data-in="D" data-cam="pan">
+  <div class="head in" data-t="0">Sen de böyle mi biliyordun?</div>
+  <div class="note in" data-t=".8">Yorumda tartışalım ↓</div>
+  <div class="stamp" data-t="1.4" style="font-size:96px">YORUM YAZ</div>
 </section>
 </body></html>
