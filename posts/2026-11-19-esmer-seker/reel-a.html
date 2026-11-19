@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@500;700;800&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F4EFE3;--ink:#1B1B1B;--red:#C8341E;--grey:#6B675E;--gold:#E8B12A;--brown:#7A4A24}
+*{box-sizing:border-box;margin:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:var(--paper);color:var(--ink);font-family:Poppins,"DejaVu Sans",sans-serif}
+body:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.025) 0 2px,transparent 2px 6px)}
+.mast{position:absolute;top:90px;left:70px;right:70px;border-top:6px solid var(--ink);border-bottom:2px solid var(--ink);padding:14px 0;display:flex;justify-content:space-between;font-weight:700;font-size:30px;letter-spacing:.1em}
+.mast b{font-family:"DM Serif Display",serif;font-size:42px;letter-spacing:0;font-weight:400}
+.scene{inset:260px 70px 470px;display:flex;flex-direction:column;justify-content:center;gap:36px}
+.head{font-family:"DM Serif Display",Georgia,serif;font-size:112px;line-height:1.03}
+.head2{font-family:"DM Serif Display",Georgia,serif;font-size:90px;line-height:1.05}
+.body{font-size:52px;line-height:1.3;font-weight:600}
+.rule{height:4px;background:var(--ink)}
+.fade{opacity:0;animation:fade .7s ease-out both}
+@keyframes fade{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+.stamp{white-space:nowrap;align-self:center;font-weight:800;font-size:120px;letter-spacing:.06em;color:var(--red);border:16px solid var(--red);border-radius:24px;padding:0 50px;transform:rotate(-8deg);opacity:0;animation:stamp .45s cubic-bezier(.3,1.8,.5,1) both}
+@keyframes stamp{from{opacity:0;transform:rotate(-8deg) scale(2.6)}to{opacity:.92;transform:rotate(-8deg) scale(1)}}
+.note{font-family:Caveat,cursive;font-size:80px;color:var(--red);opacity:0;animation:fade .6s ease-out both}
+.mark{background:linear-gradient(var(--gold),var(--gold)) no-repeat 0 85%/0% 38%;animation:mark .8s ease-out both}
+@keyframes mark{to{background-size:100% 38%}}
+.strike{position:relative;display:inline-block}
+.strike:after{content:"";position:absolute;left:-6px;right:-6px;top:52%;height:12px;background:var(--red);border-radius:6px;transform-origin:left;transform:scaleX(0);animation:st .4s ease-out both;animation-delay:inherit}
+@keyframes st{to{transform:scaleX(1)}}
+.bars{display:grid;gap:26px}
+.brow{display:grid;grid-template-columns:200px 1fr;align-items:center;gap:20px;font-size:48px;font-weight:700}
+.trk{height:84px;border:6px solid var(--ink);border-radius:14px;position:relative;overflow:hidden;background:#fff}
+.trk i{position:absolute;left:0;top:0;bottom:0;width:0;animation:fl 1.8s cubic-bezier(.3,.8,.3,1) both}
+.trk span{position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:44px;z-index:2}
+@keyframes fl{to{width:var(--w)}}
+.counter{font-family:"DM Serif Display",serif;font-size:210px;line-height:1;text-align:center}
+.eq{display:flex;align-items:center;justify-content:center;gap:30px}
+.pop{opacity:0;animation:pp .55s cubic-bezier(.2,1.6,.4,1) both}
+@keyframes pp{from{opacity:0;transform:scale(.3) rotate(-12deg)}to{opacity:1;transform:none}}
+.bob{animation:bob 1.4s ease-in-out infinite alternate both}
+@keyframes bob{from{transform:translateY(-10px) rotate(-3deg)}to{transform:translateY(10px) rotate(3deg)}}
+.eqt{font-size:36px;font-weight:700;text-align:center;margin-top:8px}
+.chk{display:grid;gap:26px}
+.chk div{display:flex;align-items:center;gap:26px;font-size:56px;font-weight:700;border-top:4px solid var(--ink);padding-top:20px}
+.chk svg{flex:none}
+.tick{stroke-dasharray:80;stroke-dashoffset:80;animation:dr .6s ease-out both}
+@keyframes dr{to{stroke-dashoffset:0}}
+#sb-sub span{background:var(--ink)!important;color:var(--paper)}
+#sb-prog{background:var(--red)!important}
+/* KAPAK: sicak koyu zemin, DEV RAKAM */
+.cover{background:#3E2415;color:#FFF3E0;align-items:center;justify-content:center;text-align:center;gap:0}
+.cover:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 45%,rgba(245,166,35,.38),transparent 62%)}
+.cover>*{position:relative}
+.cv-seri{font-size:34px;font-weight:800;letter-spacing:.12em;color:#3E2415;background:#F5A623;padding:14px 34px;border-radius:999px;margin-bottom:20px}
+.cv-num{font-weight:800;font-size:330px;line-height:.85;letter-spacing:-.04em;color:#FFF3E0}
+.cv-unit{font-weight:800;font-size:150px;line-height:1;color:#F5A623;letter-spacing:.03em}
+.cv-do{font-weight:800;font-size:66px;line-height:1.15;margin-top:30px}
+.cv-stamp{font-weight:800;font-size:64px;color:#3E2415;background:#F5A623;padding:18px 44px;border-radius:16px;transform:rotate(-4deg);margin-top:36px}
+</style></head><body>
+<div class="mast"><span>SOFRA BİLİMİ</span><b>Doğru Bilinen Yanlış</b><span>@sofrabilimi</span></div>
+
+<section class="cover">
+  <div class="cv-seri">DOĞRU BİLİNEN YANLIŞ</div>
+  <svg width="420" height="250" viewBox="0 0 420 250"><g><path d="M30 120 H190 L172 220 H48Z" fill="#F4EFE3"/><ellipse cx="110" cy="120" rx="80" ry="22" fill="#fff"/><path d="M230 120 H390 L372 220 H248Z" fill="#8A5A2B"/><ellipse cx="310" cy="120" rx="80" ry="22" fill="#B07A45"/><circle cx="210" cy="60" r="38" fill="#F5A623"/><text x="210" y="76" font-size="48" font-weight="800" text-anchor="middle" fill="#3E2415" font-family="Poppins,DejaVu Sans,sans-serif">=</text></g></svg>
+  <div class="cv-num">4</div>
+  <div class="cv-unit">KALORİ</div>
+  <div class="cv-do">esmer ile beyaz şeker<br>arasındaki fark</div>
+</section>
+
+<section class="scene" data-slide="1" data-in="U" data-cam="push">
+  <div class="body fade" data-t="0">Herkesin bildiği:</div>
+  <div class="head fade" data-t=".3">“Esmer şeker <span class="strike" style="animation-delay:1.3s">daha sağlıklı</span>”</div>
+  <div class="rule fade" data-t=".2"></div>
+  <div class="stamp" data-t="1.9">DOĞRU MU?</div>
+</section>
+
+<section class="scene" data-slide="2" data-in="L" data-cam="pan">
+  <div class="head2 fade" data-t="0">Neden böyle sanıyoruz?</div>
+  <div class="rule fade" data-t=".2"></div>
+  <div class="chk">
+    <div class="fade" data-t=".6"><svg width="70" height="70" viewBox="0 0 70 70"><circle cx="35" cy="35" r="30" fill="#7A4A24"/></svg>Rengi koyu</div>
+    <div class="fade" data-t="1.4"><svg width="70" height="70" viewBox="0 0 70 70"><path d="M35 6c14 18 22 28 22 38a22 22 0 0 1-44 0c0-10 8-20 22-38z" fill="#7A4A24"/></svg>Doğal hissi veriyor</div>
+    <div class="fade" data-t="2.4"><svg width="70" height="70" viewBox="0 0 70 70"><circle cx="35" cy="35" r="30" fill="#E8B12A"/><text x="35" y="48" font-size="38" font-weight="800" text-anchor="middle" font-family="Poppins,DejaVu Sans,sans-serif">₺</text></svg>Fiyatı yüksek</div>
+  </div>
+</section>
+
+<section class="scene" data-slide="3" data-in="R" data-cam="pull">
+  <div class="head2 fade" data-t="0">Sırrı: biraz <span class="mark" data-t=".8">melas</span></div>
+  <div class="eq">
+    <div class="pop" data-t=".5" style="text-align:center"><svg width="190" height="190" viewBox="0 0 190 190"><path d="M30 80l55-25 55 25-55 25z" fill="#fff" stroke="#1B1B1B" stroke-width="6"/><path d="M30 80v55l55 28v-58z" fill="#E7E1D2" stroke="#1B1B1B" stroke-width="6"/><path d="M140 80v55l-55 28v-58z" fill="#CFC8B6" stroke="#1B1B1B" stroke-width="6"/></svg><div class="eqt">Beyaz</div></div>
+    <div class="pop head2" data-t="1.1">+</div>
+    <div class="pop bob" data-t="1.5" style="text-align:center"><svg width="150" height="190" viewBox="0 0 150 190"><rect x="45" y="10" width="60" height="26" rx="6" fill="#1B1B1B"/><rect x="25" y="36" width="100" height="140" rx="22" fill="#4A2A12" stroke="#1B1B1B" stroke-width="6"/></svg><div class="eqt">Melas</div></div>
+    <div class="pop head2" data-t="2.1">=</div>
+    <div class="pop" data-t="2.5" style="text-align:center"><svg width="190" height="190" viewBox="0 0 190 190"><path d="M30 80l55-25 55 25-55 25z" fill="#B07A45" stroke="#1B1B1B" stroke-width="6"/><path d="M30 80v55l55 28v-58z" fill="#8A5A2B" stroke="#1B1B1B" stroke-width="6"/><path d="M140 80v55l-55 28v-58z" fill="#6E431D" stroke="#1B1B1B" stroke-width="6"/></svg><div class="eqt">Esmer</div></div>
+  </div>
+  <div class="body fade" data-t="3">Melas: şeker yapımında kalan koyu şerbet.</div>
+</section>
+
+<section class="scene" data-slide="4" data-in="D" data-cam="push">
+  <div class="head2 fade" data-t="0">50 gramda:</div>
+  <div class="bars">
+    <div class="brow"><span>Beyaz</span><div class="trk"><i style="--w:100%;background:#CFC8B6;animation-delay:.5s"></i><span>194 kcal</span></div></div>
+    <div class="brow"><span>Esmer</span><div class="trk"><i style="--w:97.9%;background:#8A5A2B;animation-delay:.9s"></i><span style="color:#fff">190 kcal</span></div></div>
+  </div>
+  <div class="counter"><span class="count" data-to="94" data-t="1.8" data-dur="1.6">0</span>%+</div>
+  <div class="body fade" data-t="2" style="text-align:center">ikisi de sofra şekeri</div>
+</section>
+
+<section class="scene" data-slide="5" data-in="Z" data-cam="pull">
+  <div class="head fade" data-t="0">İkisi de şeker.</div>
+  <div class="head fade" data-t=".8">Fark <span class="mark" data-t="1.6">renkte.</span></div>
+  <div class="stamp" data-t="1.4" style="font-size:120px">YANLIŞ</div>
+</section>
+
+<section class="scene" data-slide="6" data-in="R" data-cam="pan">
+  <div class="head2 fade" data-t="0">Renge değil, <span class="mark" data-t=".7">etikete</span> bak</div>
+  <div class="rule fade" data-t=".2"></div>
+  <div class="chk">
+    <div class="fade" data-t=".8"><svg width="70" height="70" viewBox="0 0 70 70"><path class="tick" data-t=".9" d="M10 36l16 16 34-36" stroke="#1E7A3A" stroke-width="12" fill="none" stroke-linecap="round"/></svg>Kayıtlı</div>
+    <div class="fade" data-t="1.5"><svg width="70" height="70" viewBox="0 0 70 70"><path class="tick" d="M10 36l16 16 34-36" stroke="#1E7A3A" stroke-width="12" fill="none" stroke-linecap="round" style="animation-delay:1.6s"/></svg>Etiketli</div>
+    <div class="fade" data-t="2.2"><svg width="70" height="70" viewBox="0 0 70 70"><path class="tick" d="M10 36l16 16 34-36" stroke="#1E7A3A" stroke-width="12" fill="none" stroke-linecap="round" style="animation-delay:2.3s"/></svg>Paketli</div>
+  </div>
+</section>
+
+<section class="scene" data-slide="7" data-in="U" data-cam="push">
+  <div class="head fade" data-t="0">Sen de böyle mi biliyordun?</div>
+  <div class="note" data-t=".9">Yorumda tartışalım ↓</div>
+</section>
+</body></html>

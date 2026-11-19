@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#24391A;--lime:#C5D93A;--gold:#F5B700;--coral:#FF5E3A;--cream:#FFF6E3;--ink:#1E1A14}
+*{box-sizing:border-box;margin:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:var(--bg);font-family:Poppins,"DejaVu Sans",sans-serif;color:var(--cream)}
+.handle{position:absolute;top:110px;width:100%;text-align:center;font-weight:700;font-size:40px;color:var(--lime)}
+.series{position:absolute;top:170px;width:100%;text-align:center;font-size:30px;font-weight:700;letter-spacing:.14em;color:var(--gold)}
+.scene{inset:260px 70px 470px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:40px}
+.big{font-weight:800;font-size:100px;line-height:1.06;text-align:center;letter-spacing:-.02em}
+.mid{font-weight:700;font-size:60px;line-height:1.15;text-align:center}
+.hl{color:var(--ink);background:var(--lime);padding:0 18px;border-radius:18px}
+.w{display:inline-block;opacity:0;animation:pop .5s cubic-bezier(.2,1.6,.4,1) both}
+@keyframes pop{from{opacity:0;transform:translateY(50px) scale(.6)}to{opacity:1;transform:none}}
+.chip{font-size:46px;font-weight:700;padding:22px 38px;border-radius:999px;opacity:0;animation:drop .6s cubic-bezier(.2,1.5,.4,1) both}
+@keyframes drop{from{opacity:0;transform:translateY(-120px) rotate(-8deg)}to{opacity:1;transform:none}}
+.bar{width:880px;height:100px;border-radius:50px;background:rgba(255,246,227,.15);position:relative;overflow:hidden}
+.bar i{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:50px;animation:fill 2s cubic-bezier(.3,.8,.3,1) both}
+.bar span{position:absolute;right:30px;top:50%;transform:translateY(-50%);font-size:46px;font-weight:800;color:var(--ink)}
+@keyframes fill{to{width:var(--w)}}
+.counter{font-weight:800;font-size:260px;line-height:1;color:var(--gold)}
+.pulse{animation:pulse 1s ease-in-out infinite alternate both}
+@keyframes pulse{from{transform:scale(1)}to{transform:scale(1.07)}}
+.rise{opacity:0;animation:rise .6s ease-out both}
+@keyframes rise{from{opacity:0;transform:translateY(60px)}to{opacity:1;transform:none}}
+.spin{animation:spin 6s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+/* KAPAK: EKSIK CUMLE, sicak tugla zemin */
+.cover{background:#4A1C0C;color:#FFF3E0;align-items:center;justify-content:center;text-align:center;gap:34px}
+.cover:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 42%,rgba(255,170,90,.4),transparent 62%)}
+.cover>*{position:relative}
+.cv-seri{font-size:34px;font-weight:800;letter-spacing:.12em;color:#4A1C0C;background:#FFC94A;padding:14px 34px;border-radius:999px}
+.cv-t{font-weight:800;font-size:112px;line-height:1.12}
+.cv-t em{font-style:normal;color:#FFC94A}
+.cv-dots{font-weight:800;font-size:150px;line-height:.5;color:#FFC94A;letter-spacing:.1em}
+</style></head><body>
+<div class="handle">@sofrabilimi</div>
+<div class="series">DOĞRU BİLİNEN YANLIŞ</div>
+
+<section class="cover">
+  <div class="cv-seri">DOĞRU BİLİNEN YANLIŞ</div>
+  <svg width="440" height="280" viewBox="0 0 440 280"><path d="M60 110h270v70a85 85 0 0 1-85 85h-100a85 85 0 0 1-85-85z" fill="#FFF3E0"/><path d="M330 130h40a38 38 0 0 1 0 76h-40" fill="none" stroke="#FFF3E0" stroke-width="22"/><ellipse cx="195" cy="112" rx="135" ry="26" fill="#8A4A1E"/><rect x="150" y="30" width="70" height="70" rx="10" fill="#B07A45" transform="rotate(-12 185 65)"/><rect x="220" y="50" width="60" height="60" rx="10" fill="#8A5A2B" transform="rotate(14 250 80)"/></svg>
+  <div class="cv-t">Esmer şeker<br>daha sağlıklı,<br><em>çünkü</em></div>
+  <div class="cv-dots">...</div>
+</section>
+
+<section class="scene" data-slide="1" data-in="Z" data-cam="push">
+  <div class="big"><span class="w" data-t="0">Esmer</span> <span class="w" data-t=".25">şeker</span> <span class="hl w" data-t=".5">daha</span> <span class="hl w" data-t=".75">sağlıklı</span><span class="w" data-t="1">?</span></div>
+  <div class="chip pulse" data-t="1.4" style="background:var(--coral)">Gerçekten mi?</div>
+</section>
+
+<section class="scene" data-slide="4" data-in="R" data-cam="pan">
+  <div class="mid rise" data-t="0">50 gramda kalori</div>
+  <div class="bar"><i style="--w:100%;background:var(--cream);animation-delay:.4s"></i><span>Beyaz 194</span></div>
+  <div class="bar"><i style="--w:97.9%;background:var(--gold);animation-delay:.8s"></i><span>Esmer 190</span></div>
+  <div class="counter"><span class="count" data-to="94" data-t="1.6" data-dur="1.6">0</span>%+</div>
+  <div class="chip" data-t="2.6" style="background:var(--lime);color:var(--ink)">ikisi de sofra şekeri</div>
+</section>
+
+<section class="scene" data-slide="7" data-in="L" data-cam="pull">
+  <div class="big"><span class="w" data-t="0">Fark</span> <span class="hl w" data-t=".3">renkte</span><span class="w" data-t=".6">,</span><br><span class="w" data-t=".9">şekerde</span> <span class="w" data-t="1.2">değil</span></div>
+  <div class="chip pulse" data-t="1.8" style="background:var(--lime);color:var(--ink)">Cevap profildeki postta ↑</div>
+</section>
+</body></html>
