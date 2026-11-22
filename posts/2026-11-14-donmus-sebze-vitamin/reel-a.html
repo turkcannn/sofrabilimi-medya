@@ -1,107 +1,103 @@
 <!doctype html>
 <html lang="tr"><head><meta charset="utf-8">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@500;700;800&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--paper:#F4EFE3;--ink:#1B1B1B;--red:#C8341E;--blue:#2A6FA8;--gold:#E8B12A;--green:#1E7A3A}
 *{box-sizing:border-box;margin:0}
-html,body{width:1080px;height:1920px;overflow:hidden;background:var(--paper);color:var(--ink);font-family:Poppins,"DejaVu Sans",sans-serif}
-body:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.025) 0 2px,transparent 2px 6px)}
-.mast{position:absolute;top:90px;left:70px;right:70px;border-top:6px solid var(--ink);border-bottom:2px solid var(--ink);padding:14px 0;display:flex;justify-content:space-between;font-weight:700;font-size:30px;letter-spacing:.1em}
-.mast b{font-family:"DM Serif Display","DejaVu Serif",serif;font-size:42px;letter-spacing:0;font-weight:400}
-.scene{inset:260px 70px 470px;display:flex;flex-direction:column;justify-content:center;gap:34px}
-.head{font-family:"DM Serif Display","DejaVu Serif",Georgia,serif;font-size:112px;line-height:1.04}
-.head2{font-family:"DM Serif Display","DejaVu Serif",Georgia,serif;font-size:84px;line-height:1.05}
-.body{font-size:50px;line-height:1.3;font-weight:500}
-.rule{height:4px;background:var(--ink);transform-origin:left;animation:rule .6s ease-out both}
-@keyframes rule{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-.note{font-family:Caveat,"DejaVu Sans",cursive;font-size:80px;color:var(--red)}
-.mark{background:linear-gradient(var(--gold),var(--gold)) no-repeat 0 85%/0% 38%;animation:mark .8s ease-out both}
-@keyframes mark{to{background-size:100% 38%}}
-.stamp{align-self:center;font-weight:800;font-size:130px;letter-spacing:.05em;color:var(--red);border:16px solid var(--red);border-radius:24px;padding:0 44px;transform:rotate(-8deg);opacity:0;animation:stamp .45s cubic-bezier(.3,1.8,.5,1) both}
-@keyframes stamp{from{opacity:0;transform:rotate(-8deg) scale(2.6)}to{opacity:.92;transform:rotate(-8deg) scale(1)}}
-.snow{animation:spin 6s linear infinite both;transform-origin:50% 50%}
-@keyframes spin{to{transform:rotate(360deg)}}
-.fall{animation:fl 2.2s ease-in infinite both}
-@keyframes fl{0%{transform:translateY(-20px);opacity:0}30%{opacity:1}100%{transform:translateY(60px);opacity:0}}
-.drain{height:0;animation:dr 2.2s ease-in-out both}
-.tank{width:210px;height:380px;border:8px solid var(--ink);border-radius:18px;display:flex;align-items:flex-end;background:#fff;overflow:hidden}
-.tank i{display:block;width:100%;background:var(--blue);height:100%;animation:dn 2.4s ease-in-out both;transform-origin:bottom}
-@keyframes dn{from{height:100%}to{height:48%}}
-.tank.fz i{animation:dn2 2.4s ease-in-out both}
-@keyframes dn2{from{height:100%}to{height:88%}}
-.pair{display:flex;gap:60px;justify-content:center;align-items:flex-end}
-.pair div.c{display:flex;flex-direction:column;align-items:center;gap:14px;font-size:42px;font-weight:700}
-.trio{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px}
-.cell{border-top:5px solid var(--ink);padding-top:12px;text-align:center}
-.cell .n{font-family:"DM Serif Display","DejaVu Serif",serif;font-size:190px;line-height:1}
-.cell .l{font-size:40px;font-weight:700;line-height:1.2}
-.f{opacity:0;animation:fd .6s ease-out both}
-@keyframes fd{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
-.bars{display:flex;gap:50px;align-items:flex-end;justify-content:center;height:360px}
-.bb{width:200px;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:10px;height:100%}
-.bb .col{width:100%;height:0;animation:grow 1.4s cubic-bezier(.3,.9,.3,1) both}
-@keyframes grow{to{height:var(--h)}}
-.bb span{font-size:42px;font-weight:700}
-#sb-sub span{background:var(--ink)!important;color:var(--paper)}
-#sb-prog{background:var(--red)!important}
+html,body{width:1080px;height:1920px;overflow:hidden;font-family:Poppins,"DejaVu Sans",sans-serif;color:#14213D;
+ background-color:#FFFFFF;background-image:linear-gradient(#CFE6F5 2px,transparent 2px),linear-gradient(90deg,#CFE6F5 2px,transparent 2px);background-size:60px 60px}
+.top{position:absolute;top:110px;left:0;right:0;text-align:center;font-weight:800;font-size:40px;color:#14213D}
+.top small{display:block;font-size:30px;letter-spacing:.14em;color:#E03E1A;margin-top:10px}
+.scene{inset:260px 70px 470px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:36px;text-align:center}
+.hand{font-family:Caveat,"DejaVu Sans",cursive;font-weight:700}
+.big{font-weight:800;font-size:96px;line-height:1.08;letter-spacing:-.02em}
+.mid{font-weight:700;font-size:62px;line-height:1.15}
+.mark{background:linear-gradient(transparent 55%,#FFE45C 55%);padding:0 10px}
+.draw path,.draw circle,.draw line,.draw rect{stroke-dasharray:1400;stroke-dashoffset:1400;animation:dr 1.4s ease-out both}
+@keyframes dr{to{stroke-dashoffset:0}}
+.note{font-size:70px;color:#E03E1A;transform:rotate(-4deg)}
+.card{background:#fff;border:6px solid #14213D;border-radius:28px;padding:30px 40px;box-shadow:10px 10px 0 #14213D}
+.bar{width:800px;height:70px;border:6px solid #14213D;border-radius:35px;background:#fff;overflow:hidden;position:relative}
+.bar i{position:absolute;left:0;top:0;bottom:0;width:0;background:#8BC34A;animation:fill 2s cubic-bezier(.3,.8,.3,1) both}
+@keyframes fill{to{width:var(--w)}}
+.sq{width:150px;height:150px;border:6px solid #14213D;border-radius:22px;display:grid;place-items:center;font-size:90px;font-weight:800;background:#CFE6F5}
+.sq.hi{background:#14213D;color:#8BE0FF}
+.row{display:flex;gap:18px;flex-wrap:wrap;justify-content:center;width:900px}
+/* kapak */
+.cover{background:#3E2415;background-image:none;color:#FFF3E0;gap:26px;align-items:center;justify-content:center;text-align:center}
+.cover:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(245,166,35,.4),transparent 62%)}
+.cover>*{position:relative}
+.cover .seri{font-size:32px;font-weight:700;color:#3E2415;background:#F5A623;padding:12px 30px;border-radius:999px;letter-spacing:.1em}
+.cover .claim{font-weight:800;font-size:108px;line-height:1.14;letter-spacing:-.02em}
+.cover .claim b{position:relative;display:inline-block}
+.cover .claim b:after{content:"";position:absolute;left:-14px;right:-14px;top:50%;height:13px;background:#FF4A22;border-radius:7px;transform:rotate(-1.5deg)}
+.cover .stamp{font-weight:800;font-size:76px;color:#3E2415;background:#F5A623;padding:20px 50px;border-radius:18px;transform:rotate(-5deg);box-shadow:0 20px 54px rgba(245,166,35,.45)}
 </style></head><body>
-<div class="mast"><span>@sofrabilimi</span><b>Doğru Bilinen Yanlış</b></div>
+<div class="top">@sofrabilimi<small>DOĞRU BİLİNEN YANLIŞ</small></div>
 
-<section class="scene" data-slide="1" data-in="U" data-cam="push">
-  <div class="body f" data-t="0">Herkesin bildiği:</div>
-  <div class="head f" data-t=".3">“Donan sebzenin vitamini <span class="mark" data-t="1.2">ölür</span>”</div>
-  <div class="rule" data-t=".2"></div>
-  <div class="note f" data-t="2">Peki doğru mu?</div>
-</section>
-
-<section class="scene" data-slide="2" data-in="L" data-cam="pan">
-  <svg class="f" data-t="0" width="300" height="300" viewBox="-150 -150 300 300" style="align-self:center">
-    <g class="snow" stroke="#2A6FA8" stroke-width="12" stroke-linecap="round"><path d="M0 -130V130M-112 -65L112 65M-112 65L112 -65"/><path d="M-20 -110L0 -90L20 -110M-20 110L0 90L20 110" fill="none"/></g>
+<section class="cover">
+  <div class="seri">DOĞRU BİLİNEN YANLIŞ</div>
+  <svg width="400" height="390" viewBox="0 0 400 390">
+    <g transform="translate(200,200) rotate(-6)">
+      <rect x="-130" y="-150" width="260" height="320" rx="26" fill="#E6F4FB"/>
+      <rect x="-130" y="-150" width="260" height="46" rx="20" fill="#5BA7CC"/>
+      <rect x="-86" y="-70" width="172" height="62" rx="12" fill="#fff"/>
+      <text x="0" y="-28" text-anchor="middle" font-family="Poppins,DejaVu Sans" font-weight="800" font-size="28" fill="#3E2415">DONMUŞ</text>
+      <g fill="#3F8F3A"><circle cx="-60" cy="60" r="38"/><circle cx="0" cy="40" r="46"/><circle cx="62" cy="64" r="36"/><circle cx="-20" cy="110" r="34"/><circle cx="42" cy="118" r="32"/></g>
+      <g fill="#8BC34A"><circle cx="-50" cy="50" r="8"/><circle cx="12" cy="28" r="9"/><circle cx="58" cy="54" r="7"/></g>
+    </g>
+    <g stroke="#9FD8F2" stroke-width="10" stroke-linecap="round"><path d="M40 60l30 30M70 60l-30 30M355 120l24 24M379 120l-24 24"/></g>
   </svg>
-  <div class="head2 f" data-t=".4">Çözülünce yumuşuyor, su salıyor</div>
-  <div class="note f" data-t="1.6">“tadı gitti, vitamini de gitti”</div>
+  <div class="claim"><b>DONMUŞ SEBZE</b><br><b>VİTAMİNSİZ</b></div>
+  <div class="stamp">ÇOĞUNLUKLA YANLIŞ</div>
 </section>
 
-<section class="scene" data-slide="3" data-in="R" data-cam="pull">
-  <div class="head2 f" data-t="0">Taze sebze de bekledikçe besin kaybeder</div>
-  <div class="pair">
-    <div class="c"><div class="tank"><i></i></div><span>Buzdolabında bekleyen</span></div>
-    <div class="c"><div class="tank fz"><i></i></div><span>Dondurulmuş</span></div>
-  </div>
-  <div class="body f" data-t="2.6" style="font-size:40px;text-align:center">çizim temsilidir</div>
+<section class="scene" data-slide="1" data-in="Z" data-cam="push">
+  <div class="mid hand" data-t=".1" style="font-size:84px">hepimiz böyle biliriz:</div>
+  <div class="big pop" data-t=".5">“Donan sebzenin vitamini <span class="mark">ölür</span>”</div>
+  <svg width="300" height="260" viewBox="0 0 300 260" class="draw" data-t="1.4"><g fill="none" stroke="#E03E1A" stroke-width="14" stroke-linecap="round"><path d="M70 30 C20 90 40 200 150 215 C250 220 270 120 215 60 C190 35 140 25 120 70 C110 100 150 110 160 140"/><line x1="160" y1="238" x2="162" y2="246"/></g></svg>
+  <div class="note hand pulse" data-t="2.4">doğru mu?</div>
+</section>
+
+<section class="scene" data-slide="2" data-in="R" data-cam="pan">
+  <div class="mid slideL" data-t=".2">çözülünce yumuşuyor</div>
+  <svg width="420" height="360" viewBox="0 0 420 360" class="draw" data-t=".4"><g fill="none" stroke="#14213D" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"><rect x="100" y="30" width="220" height="200" rx="26"/><path d="M130 130 Q210 200 290 130"/><path d="M160 260 q-14 26 0 40 q14 -14 0 -40"/><path d="M260 270 q-14 26 0 40 q14 -14 0 -40"/></g></svg>
+  <div class="mid slideR" data-t="1.6">su salıyor</div>
+  <div class="note hand pop" data-t="2.6">“tadı gitti, vitamini de mi?”</div>
+</section>
+
+<section class="scene" data-slide="3" data-in="L" data-cam="pull">
+  <div class="big flyUp" data-t=".2">taze sebze de <span class="mark">bekledikçe</span></div>
+  <div class="card" style="width:900px"><div class="mid" style="font-size:48px;margin-bottom:18px">tarla → tezgâh → ev</div><div class="bar"><i style="--w:28%;background:#FF7A3D;animation-delay:.8s"></i></div><div class="hand" style="font-size:52px;margin-top:10px" >besin azalıyor</div></div>
+  <div class="card" style="width:900px"><div class="mid" style="font-size:48px;margin-bottom:18px">dondurulan</div><div class="bar"><i style="--w:86%;animation-delay:1.8s"></i></div><div class="hand" style="font-size:52px;margin-top:10px">saat yavaşladı</div></div>
 </section>
 
 <section class="scene" data-slide="4" data-in="D" data-cam="push">
-  <div class="head2 f" data-t="0">8 sebze-meyve karşılaştırıldı</div>
-  <div class="trio">
-    <div class="cell f" data-t=".6"><div class="n"><span class="count" data-to="8" data-t=".6" data-dur="1">0</span></div><div class="l">karşılaştırma</div></div>
-    <div class="cell f" data-t="3.2"><div class="n" style="color:var(--green)"><span class="count" data-to="5" data-t="3.2" data-dur="1">0</span></div><div class="l">C vitamini farkı yok</div></div>
-    <div class="cell f" data-t="5" ><div class="n" style="color:var(--blue)"><span class="count" data-to="3" data-t="5" data-dur="1">0</span></div><div class="l">donmuşta yüksek</div></div>
+  <div class="mid in" data-t=".1">8 sebze-meyve kıyaslandı</div>
+  <div class="row">
+    <div class="sq pop" data-t=".5">=</div><div class="sq pop" data-t=".7">=</div><div class="sq pop" data-t=".9">=</div><div class="sq pop" data-t="1.1">=</div><div class="sq pop" data-t="1.3">=</div>
+    <div class="sq hi drop" data-t="2.4">*</div><div class="sq hi drop" data-t="2.6">*</div><div class="sq hi drop" data-t="2.8">*</div>
   </div>
+  <div class="big in" data-t="1.6" style="font-size:150px"><span class="count" data-to="5" data-t="1.5" data-dur="1">0</span> / 8</div>
+  <div class="mid hand in" data-t="2" style="font-size:64px">C vitamini farkı yok</div>
 </section>
 
-<section class="scene" data-slide="5" data-in="Z" data-cam="pan">
-  <div class="stamp" data-t=".1" style="font-size:72px;margin-bottom:50px;white-space:nowrap">DÜRÜST OLALIM</div>
-  <div class="head2 f" data-t=".8" style="font-size:72px">Beta-karoten, donmuşta daha düşük:</div>
-  <div class="bars">
-    <div class="bb"><div class="col" data-t="1.4" style="--h:300px;background:#E8832A"></div><span>Bezelye taze</span></div>
-    <div class="bb"><div class="col" data-t="1.8" style="--h:190px;background:#8CB8D8"></div><span>donmuş</span></div>
-    <div class="bb"><div class="col" data-t="2.2" style="--h:300px;background:#E8832A"></div><span>Havuç taze</span></div>
-    <div class="bb"><div class="col" data-t="2.6" style="--h:200px;background:#8CB8D8"></div><span>donmuş</span></div>
-  </div>
+<section class="scene" data-slide="5" data-in="U" data-cam="pan">
+  <svg width="780" height="420" viewBox="0 0 780 420"><g class="swing" style="transform-origin:390px 130px"><g fill="none" stroke="#14213D" stroke-width="12" stroke-linecap="round" class="draw"><line x1="390" y1="100" x2="390" y2="380"/><line x1="90" y1="140" x2="690" y2="140"/><path d="M40 260 Q140 330 240 260 Z"/><path d="M540 260 Q640 330 740 260 Z"/></g></g>
+  </svg>
+  <div class="big pop" data-t=".4" style="font-size:80px">vitamini <span class="mark">ölmüyor</span></div>
+  <div class="note hand slideL" data-t="1.2">ama “hep daha iyi” de değil</div>
 </section>
 
 <section class="scene" data-slide="6" data-in="L" data-cam="pull">
-  <div class="head2 f" data-t="0">Ne yapmalı?</div>
-  <div class="rule" data-t=".2"></div>
-  <div class="body f" data-t=".6">① Taze mi? Bekletmeden tüket.</div>
-  <div class="body f" data-t="2">② Donmuş mu? Etiketli ürünü seç, içindekilere bak.</div>
-  <div class="stamp" data-t="3.4" style="color:var(--green);border-color:var(--green);font-size:100px">AKILLICA</div>
+  <div class="mid in" data-t=".1">alışverişte</div>
+  <div class="card slideR" data-t=".4" style="width:900px"><div class="mid" style="font-size:54px">dondurucu reyonu</div></div>
+  <div class="card slideL" data-t="1.2" style="width:900px"><div class="mid" style="font-size:54px">etiketli paket</div></div>
+  <div class="card slideR" data-t="2" style="width:900px"><div class="mid" style="font-size:54px">içindekilere bak</div></div>
 </section>
 
 <section class="scene" data-slide="7" data-in="Z" data-cam="push">
-  <div class="head f" data-t="0">Sen de böyle mi biliyordun?</div>
-  <div class="note f" data-t=".9">Yorumda tartışalım ↓</div>
-  <svg class="f" data-t="1.4" width="200" height="200" viewBox="-100 -100 200 200" style="align-self:center"><g class="snow" stroke="#2A6FA8" stroke-width="10" stroke-linecap="round"><path d="M0 -85V85M-74 -42L74 42M-74 42L74 -42"/></g></svg>
+  <div class="big zoom" data-t=".2" style="font-size:110px">sen de böyle mi biliyordun?</div>
+  <svg width="200" height="200" viewBox="0 0 200 200" class="bob"><circle cx="100" cy="100" r="80" fill="#FFE45C" stroke="#14213D" stroke-width="10"/><text x="100" y="135" text-anchor="middle" font-size="110" font-weight="800" font-family="Poppins,DejaVu Sans">?</text></svg>
+  <div class="note hand pop" data-t="1.4" style="font-size:80px">yorumda tartışalım</div>
 </section>
 </body></html>
